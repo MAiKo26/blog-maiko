@@ -1,57 +1,94 @@
 "use server";
 
-import {Dispatch, SetStateAction} from "react";
-import prisma from "@/lib/db"; // Assuming prisma is properly configured in your project
+import prisma from "@/lib/db";
+import {revalidatePath} from "next/cache";
 
-// Fixing the parameter to include setPosts as a setter function
-export async function save(
-  setPosts: Dispatch<
-    SetStateAction<
-      {
-        id: number;
-        createdAt: Date;
-        image: string;
-        title: string;
-        content: string | null;
-        published: boolean;
-        authorId: string;
-      }[]
-    >
-  >,
-  formData: FormData
-) {
-  // Log the name value from formData
-  console.log(formData.get("name"));
-
+export async function createPost(formData: FormData) {
   try {
-    // Create an admin (if necessary)
-    await prisma.admin.create({
+    const result = await prisma.post.create({
       data: {
-        id: "admin2", // hardcoded id for this example
-        username: "test", // hardcoded username
-        password: "test", // hardcoded password
-        Post: {
-          create: {
-            title: formData.get("name") as string, // dynamic title from formData
-            image: "https://nextjs.org/static/favicon/favicon-32x32.png", // sample image URL
-          },
-        },
+        image: formData.get("image") as string,
+        title: formData.get("title") as string,
+        authorId: formData.get("authorId") as string,
+        id: Number(formData.get("id")),
       },
     });
-
-    // Fetch all admins to verify creation
-    const admins = await prisma.admin.findMany();
-    console.log(admins);
+    console.log(result);
   } catch (error) {
-    console.error("Error creating admin or post:", error);
+    console.log(error);
   }
-
+  revalidatePath("/");
+}
+export async function deletePost(formData: FormData) {
   try {
-    // Fetch all posts and update the state
-    const posts = await prisma.post.findMany();
-    console.log(posts);
-    setPosts(posts); // Update the posts state
+    const result = await prisma.post.delete({
+      where: {id: Number(formData.get("id"))},
+    });
+    console.log(result);
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.log(error);
+  }
+  revalidatePath("/");
+}
+export async function updatePost(formData: FormData) {
+  try {
+    const result = await prisma.post.update({
+      where: {id: Number(formData.get("id"))},
+      data: {
+        image: formData.get("image") as string,
+        title: formData.get("title") as string,
+        authorId: formData.get("authorId") as string,
+      },
+    });
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+  revalidatePath("/");
+}
+export async function createAuthor(formData: FormData) {
+  try {
+    const result = await prisma.admin.create({
+      data: {
+        id: formData.get("id") as string,
+        username: formData.get("username") as string,
+        password: formData.get("password") as string,
+      },
+    });
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+  revalidatePath("/");
+}
+export async function getFirstPost() {
+  try {
+    const result = await prisma.post.findFirst();
+    return result;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+export async function getAllPosts() {
+  try {
+    const result = await prisma.post.findMany();
+    return result;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export async function getAllAuthors() {
+  try {
+    const result = await prisma.admin.findMany();
+    if (result) {
+      return result;
+    }
+    return null;
+  } catch (error) {
+    console.log(error);
+    return null;
   }
 }
