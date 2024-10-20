@@ -1,127 +1,207 @@
 /* eslint-disable @next/next/no-async-client-component */
 "use client";
-import {Post} from "@prisma/client";
-import Image from "next/image";
-import {FormEvent, useState} from "react";
-import {save} from "./actions";
+import {Post, Admin} from "@prisma/client";
+import {useEffect, useState} from "react";
+import {
+  createAuthor,
+  createPost,
+  deletePost,
+  getAllAuthors,
+  getAllPosts,
+  getFirstPost,
+  updatePost,
+} from "./actions";
 
 export default function Home() {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Prevent page refresh
-    const formData = new FormData(event.currentTarget); // Capture form data
-    await save(setPosts, formData); // Call save with both arguments
-  };
+  const [posts, setPosts] = useState<Post[] | null>(null);
+  const [post, setPost] = useState<Post | null>(null);
+  const [authors, setAuthors] = useState<Admin[] | null>(null);
+  const [triggerFetch, setTriggerFetch] = useState(false); // State to trigger refetch
+
+  useEffect(() => {
+    async function getAll() {
+      const posts = await getAllPosts();
+      setPosts(posts);
+    }
+
+    async function getFirst() {
+      const post = await getFirstPost();
+      setPost(post);
+    }
+
+    async function getAuthors() {
+      const authors = await getAllAuthors();
+      setAuthors(authors);
+    }
+
+    getAuthors();
+    getAll();
+    getFirst();
+  }, [triggerFetch]);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing Here and here and there
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            <form onSubmit={handleSubmit}>
-              {" "}
-              {/* Use onSubmit instead of action */}
-              <input
-                type="text"
-                name="title"
-                className="border border-black text-black"
-              />
-              <button type="submit">Save</button> {/* Set type="submit" */}
-              <h1 className="text-3xl font-bold text-black">
-                {posts.map((post) => (
-                  <div key={post.id}>{post.title}</div>
-                ))}
-              </h1>
-            </form>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <h1>Create da</h1>
+      <form
+        action={async (formData) => {
+          await createAuthor(formData);
+          setTriggerFetch(!triggerFetch);
+        }}
+      >
+        <div>
+          <label>id :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="id"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div>
+          <label>username :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="username"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+        </div>
+        <div>
+          <label>password :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="password"
+            name="password"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+        </div>
+        <button>Submit</button>
+      </form>
+      <h1>Create Post</h1>
+      <form action={createPost}>
+        <div>
+          <label>id :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="number"
+            name="id"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+        <div>
+          <label>Created At :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="date"
+            name="createdAt"
+          />
+        </div>
+
+        <div>
+          <label>image</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="image"
+          />
+        </div>
+        <div>
+          <label>title</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="title"
+          />
+        </div>
+        <div>
+          <label>authorId :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="authorId"
+          />
+        </div>
+        <button>Submit</button>
+      </form>
+      <h1>Display First Post</h1>
+      <div> {post?.authorId}</div>
+      <div> {post?.content}</div>
+      <div> {post?.createdAt.getMinutes()}</div>
+      <div> id: {post?.id}</div>
+      <div> {post?.image}</div>
+      <div> {post?.published}</div>
+      <div> {post?.title}</div>
+      <h1>Display All Posts</h1>
+      {posts &&
+        posts.map((post) => (
+          <div key={post.id}>
+            {post.id}
+            <h2>{post.title}</h2>
+            <p>{post.content}</p>
+            <p>Author: {post.authorId}</p>
+          </div>
+        ))}
+      <h1>Display Authors</h1>
+      <div>
+        {authors &&
+          authors.map((author, index) => (
+            <div key={index}>
+              {author.id}
+              {author.username}
+              {author.password}
+            </div>
+          ))}
+      </div>
+      <h1>Delete Post</h1>
+      <form action={deletePost}>
+        <input
+          className="border border-black text-black font-bold"
+          type="text"
+          name="id"
+        />
+        <button>Submit</button>
+      </form>
+      <h1>Update Post</h1>
+      <form action={updatePost}>
+        <div>
+          <label>id :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="id"
+          />
+        </div>
+        <div>
+          <label>Created At :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="date"
+            name="createdAt"
+          />
+        </div>
+
+        <div>
+          <label>image</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="image"
+          />
+        </div>
+        <div>
+          <label>title</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="title"
+          />
+        </div>
+        <div>
+          <label>authorId :</label>{" "}
+          <input
+            className="border border-black text-black font-bold"
+            type="text"
+            name="authorId"
+          />
+        </div>
+        <button>Submit</button>
+      </form>
     </div>
   );
 }
