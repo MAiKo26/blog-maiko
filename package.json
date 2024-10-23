@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "start": "next start",
-    "dev": "cross-env INIT_CWD=$PWD next dev",
-    "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
-    "analyze": "cross-env ANALYZE=true next build",
+    "dev": "next dev",
+    "build": "next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
     "prettier": "prettier --write ."
   },

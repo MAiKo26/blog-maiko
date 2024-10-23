@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package*.json package-lock.json* ./
 
-RUN npm ci
+RUN npm install
 
 COPY . .
 
@@ -31,8 +31,10 @@ COPY --from=builder /app/public ./public
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
-COPY --from=builder --chown=nextjs /app/.next/static ./.next/standalone ./
-COPY --from=builder --chown=nextjs /app/.next/static ./.next/static
+# Copy the necessary build files from builder stage
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./  
+COPY --from=builder --chown=nextjs:nodejs /app/public ./.next/standalone/public  
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static  
 
 USER nextjs
 
@@ -40,4 +42,4 @@ EXPOSE 3000
 
 ENV PORT=3000
 
-CMD ["node", "server.js"]
+CMD node .next/standalone/server.js
