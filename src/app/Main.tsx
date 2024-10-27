@@ -1,13 +1,12 @@
 "use client";
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/data/siteMetadata";
-import { formatDate } from "pliny/utils/formatDate.js";
-import NewsletterForm from "@/components/NewsLetter";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import { Animanga, Tech, Tvshows } from "contentlayer/generated";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import siteMetadata from "@/data/siteMetadata";
+import { Animanga, Tech, Tvshows } from "contentlayer/generated";
+import { CoreContent } from "pliny/utils/contentlayer.js";
+import { formatDate } from "pliny/utils/formatDate.js";
+import { useState } from "react";
 
 const MAX_DISPLAY = 5;
 

@@ -1,14 +1,14 @@
-import { ReactNode, Suspense } from "react";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import type { Animanga, Tech, Tvshows, Authors } from "contentlayer/generated";
 import Comments from "@/components/Comments";
+import Image from "@/components/Image";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
+import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import SectionContainer from "@/components/SectionContainer";
-import Image from "@/components/Image";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/data/siteMetadata";
-import ScrollTopAndComment from "@/components/ScrollTopAndComment";
+import type { Animanga, Authors, Tech, Tvshows } from "contentlayer/generated";
+import { CoreContent } from "pliny/utils/contentlayer.js";
+import { ReactNode } from "react";
 import ViewCount from "../ViewCount";
 
 const editUrl = (path: string) =>
