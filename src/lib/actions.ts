@@ -2,6 +2,8 @@
 import prisma from "@/lib/db";
 
 export async function getViewCount(url: string): Promise<number> {
+  console.log(url);
+
   if (!url) return 0;
 
   try {
@@ -24,7 +26,7 @@ export async function getViewCount(url: string): Promise<number> {
     return updated.views;
   } catch (error) {
     console.error("Database error:", error);
-    return 2234; // Return 0 instead of throwing to handle gracefully
+    return 0; // Return 0 instead of throwing to handle gracefully
   }
 }
 

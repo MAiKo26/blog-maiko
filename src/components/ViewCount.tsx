@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { getViewCount } from "@/lib/actions";
+import ViewCountSkeleton from "./ViewCountSkeleton";
 
 interface ViewCountProps {
   url: string;
@@ -23,12 +24,17 @@ function ViewCount({ url }: ViewCountProps) {
     fetchViews();
   }, [url]);
 
-  if (views === null)
-    return (
-      <div className="h-2 max-w-sm animate-pulse rounded-full bg-gray-200 dark:bg-gray-700"></div>
-    );
+  if (views === null) return <ViewCountSkeleton />;
+  if (views === 0) return null;
 
-  return <div>{views}</div>;
+  return (
+    <div className="py-4 xl:py-8">
+      <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+        Views
+      </h2>
+      <div className="flex flex-wrap">{views}</div>
+    </div>
+  );
 }
 
 export default ViewCount;

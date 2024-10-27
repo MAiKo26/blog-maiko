@@ -144,20 +144,7 @@ export default function PostLayout({
                   </div>
                 )}
 
-                <div className="py-4 xl:py-8">
-                  <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                    Views
-                  </h2>
-                  <div className="flex flex-wrap">
-                    <Suspense
-                      fallback={
-                        <div className="h-2 max-w-sm animate-pulse rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                      }
-                    >
-                      <ViewCount url={filePath} />
-                    </Suspense>
-                  </div>
-                </div>
+                <ViewCount url={filePath} />
 
                 {(next || prev) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
