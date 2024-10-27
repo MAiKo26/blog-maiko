@@ -3,22 +3,15 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
 model ViewCount {
     id    String @id // Blog's URL as the unique identifier
-    views BigInt @default(0) // Default views set to 0
+    views Int    @default(0) // Default views set to 0
 }
 
 model NewsLetterSubscriber {
-    email   String @id @unique
-    tag     Tag    @relation(fields: [tagName], references: [name])
-    tagName String
-}
-
-model Tag {
-    name                 String                 @id @unique
-    NewsLetterSubscriber NewsLetterSubscriber[]
+    email String @id @unique
 }

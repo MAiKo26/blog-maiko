@@ -2,54 +2,60 @@ networks:
   caddy:
 
 services:
-  web:
-    build: .
-    ports:
-      - "3000:3000"
-    develop:
-      watch:
-        - action: rebuild
-          path: ./
-          target: /app/
-          ignore:
-            - node_modules/
-    volumes:
-      - .:/app
-    depends_on:
-      - db
-    networks:
-      - caddy
-
   db:
     image: postgres:alpine
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgresuser
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: postgresdb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     networks:
       - caddy
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-  # reverseproxy:
-  #   image: caddy/caddy:latest
-  #   container_name: caddy
-  #   restart: always
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./Caddyfile:/etc/caddy/Caddyfile
-  #     - caddy_data:/data
-  #     - caddy_config:/config
-  #   depends_on:
-  #     - web
-  #   networks:
-  #     - caddy
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - WAIT_HOSTS=db:5432
+      - WAIT_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+    env_file:
+      - .env
+    networks:
+      - caddy
+
+  reverseproxy:
+    image: caddy/caddy:latest
+    container_name: caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+    networks:
+      - caddy
 
 volumes:
   pgdata:
-  # caddy_data:
-  # caddy_config:
+  caddy_data:
+  caddy_config:

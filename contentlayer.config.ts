@@ -3,15 +3,15 @@ import {
   ComputedFields,
   makeSource,
 } from "contentlayer2/source-files";
-import { writeFileSync } from "fs";
+import {writeFileSync} from "fs";
 import readingTime from "reading-time";
-import { slug } from "github-slugger";
+import {slug} from "github-slugger";
 import path from "path";
-import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
+import {fromHtmlIsomorphic} from "hast-util-from-html-isomorphic";
 // Remark packages
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import { remarkAlert } from "remark-github-blockquote-alert";
+import {remarkAlert} from "remark-github-blockquote-alert";
 import {
   remarkExtractFrontmatter,
   remarkCodeTitles,
@@ -26,7 +26,7 @@ import rehypeCitation from "rehype-citation";
 import rehypePrismPlus from "rehype-prism-plus";
 import rehypePresetMinify from "rehype-preset-minify";
 import siteMetadata from "./src/data/siteMetadata";
-import { allCoreContent, sortPosts } from "pliny/utils/contentlayer.js";
+import {allCoreContent, sortPosts} from "pliny/utils/contentlayer.js";
 
 const root = process.cwd();
 const isProduction = process.env.NODE_ENV === "production";
@@ -41,11 +41,11 @@ const icon = fromHtmlIsomorphic(
   </svg>
   </span>
 `,
-  { fragment: true },
+  {fragment: true}
 );
 
 const computedFields: ComputedFields = {
-  readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
+  readingTime: {type: "json", resolve: (doc) => readingTime(doc.body.raw)},
   slug: {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath.replace(/^.+?(\/)/, ""),
@@ -58,17 +58,17 @@ const computedFields: ComputedFields = {
     type: "string",
     resolve: (doc) => doc._raw.sourceFilePath,
   },
-  toc: { type: "json", resolve: (doc) => extractTocHeadings(doc.body.raw) },
+  toc: {type: "json", resolve: (doc) => extractTocHeadings(doc.body.raw)},
 };
 
 /**
  * Count the occurrences of all tags across blog posts and write to json file
  */
-function createTagCount(allBlogs) {
+function createTagCount(allItems: any, category?: string) {
   const tagCount: Record<string, number> = {};
-  allBlogs.forEach((file) => {
+  allItems.forEach((file: any) => {
     if (file.tags && (!isProduction || file.draft !== true)) {
-      file.tags.forEach((tag) => {
+      file.tags.forEach((tag: any) => {
         const formattedTag = slug(tag);
         if (formattedTag in tagCount) {
           tagCount[formattedTag] += 1;
@@ -78,38 +78,114 @@ function createTagCount(allBlogs) {
       });
     }
   });
-  writeFileSync("./src/app/tag-data.json", JSON.stringify(tagCount));
+  writeFileSync(
+    `./src/tags/tag-data${category && `-${category}`}.json`,
+    JSON.stringify(tagCount)
+  );
 }
 
-function createSearchIndex(allBlogs) {
+function createSearchIndex(allItems: any) {
   if (
     siteMetadata?.search?.provider === "kbar" &&
     siteMetadata.search.kbarConfig.searchDocumentsPath
   ) {
     writeFileSync(
       `public/${path.basename(siteMetadata.search.kbarConfig.searchDocumentsPath)}`,
-      JSON.stringify(allCoreContent(sortPosts(allBlogs))),
+      JSON.stringify(allCoreContent(sortPosts(allItems)))
     );
     console.log("Local search index generated...");
   }
 }
 
-export const Blog = defineDocumentType(() => ({
-  name: "Blog",
-  filePathPattern: "blog/**/*.mdx",
+export const Animanga = defineDocumentType(() => ({
+  name: "Animanga",
+  filePathPattern: "animanga/**/*.mdx",
   contentType: "mdx",
   fields: {
-    title: { type: "string", required: true },
-    date: { type: "date", required: true },
-    tags: { type: "list", of: { type: "string" }, default: [] },
-    lastmod: { type: "date" },
-    draft: { type: "boolean" },
-    summary: { type: "string" },
-    images: { type: "json" },
-    authors: { type: "list", of: { type: "string" } },
-    layout: { type: "string" },
-    bibliography: { type: "string" },
-    canonicalUrl: { type: "string" },
+    title: {type: "string", required: true},
+    date: {type: "date", required: true},
+    tags: {type: "list", of: {type: "string"}, default: []},
+    lastmod: {type: "date"},
+    draft: {type: "boolean"},
+    summary: {type: "string"},
+    images: {type: "json"},
+    authors: {type: "list", of: {type: "string"}},
+    layout: {type: "string"},
+    bibliography: {type: "string"},
+    canonicalUrl: {type: "string"},
+    category: {default: "animanga", type: "string"},
+  },
+  computedFields: {
+    ...computedFields,
+    structuredData: {
+      type: "json",
+      resolve: (doc) => ({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: doc.title,
+        datePublished: doc.date,
+        dateModified: doc.lastmod || doc.date,
+        description: doc.summary,
+        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
+        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}));
+
+export const Tech = defineDocumentType(() => ({
+  name: "Tech",
+  filePathPattern: "tech/**/*.mdx",
+  contentType: "mdx",
+  fields: {
+    title: {type: "string", required: true},
+    date: {type: "date", required: true},
+    tags: {type: "list", of: {type: "string"}, default: []},
+    lastmod: {type: "date"},
+    draft: {type: "boolean"},
+    summary: {type: "string"},
+    images: {type: "json"},
+    authors: {type: "list", of: {type: "string"}},
+    layout: {type: "string"},
+    bibliography: {type: "string"},
+    canonicalUrl: {type: "string"},
+    category: {default: "tech", type: "string"},
+  },
+  computedFields: {
+    ...computedFields,
+    structuredData: {
+      type: "json",
+      resolve: (doc) => ({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: doc.title,
+        datePublished: doc.date,
+        dateModified: doc.lastmod || doc.date,
+        description: doc.summary,
+        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
+        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}));
+
+export const Tvshows = defineDocumentType(() => ({
+  name: "Tvshows",
+  filePathPattern: "tvshows/**/*.mdx",
+  contentType: "mdx",
+  fields: {
+    title: {type: "string", required: true},
+    date: {type: "date", required: true},
+    tags: {type: "list", of: {type: "string"}, default: []},
+    lastmod: {type: "date"},
+    draft: {type: "boolean"},
+    summary: {type: "string"},
+    images: {type: "json"},
+    authors: {type: "list", of: {type: "string"}},
+    layout: {type: "string"},
+    bibliography: {type: "string"},
+    canonicalUrl: {type: "string"},
+    category: {default: "tvshows", type: "string"},
   },
   computedFields: {
     ...computedFields,
@@ -134,22 +210,23 @@ export const Authors = defineDocumentType(() => ({
   filePathPattern: "authors/**/*.mdx",
   contentType: "mdx",
   fields: {
-    name: { type: "string", required: true },
-    avatar: { type: "string" },
-    occupation: { type: "string" },
-    company: { type: "string" },
-    email: { type: "string" },
-    twitter: { type: "string" },
-    linkedin: { type: "string" },
-    github: { type: "string" },
-    layout: { type: "string" },
+    name: {type: "string", required: true},
+    avatar: {type: "string"},
+    occupation: {type: "string"},
+    company: {type: "string"},
+    email: {type: "string"},
+    twitter: {type: "string"},
+    linkedin: {type: "string"},
+    github: {type: "string"},
+    layout: {type: "string"},
+    category: {default: "authors", type: "string"},
   },
   computedFields,
 }));
 
 export default makeSource({
   contentDirPath: "src/data",
-  documentTypes: [Blog, Authors],
+  documentTypes: [Animanga, Tvshows, Tech, Authors],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [
@@ -173,14 +250,17 @@ export default makeSource({
         },
       ],
       rehypeKatex,
-      [rehypeCitation, { path: path.join(root, "src/data") }],
-      [rehypePrismPlus, { defaultLanguage: "js", ignoreMissing: true }],
+      [rehypeCitation, {path: path.join(root, "src/data")}],
+      [rehypePrismPlus, {defaultLanguage: "js", ignoreMissing: true}],
       rehypePresetMinify,
     ],
   },
   onSuccess: async (importData) => {
-    const { allBlogs } = await importData();
-    createTagCount(allBlogs);
-    createSearchIndex(allBlogs);
+    const {allAnimangas, allTeches, allTvshows} = await importData();
+    createTagCount(allAnimangas, "animanga");
+    createTagCount(allTeches, "tech");
+    createTagCount(allTvshows, "tvshows");
+    createTagCount([...allAnimangas, ...allTeches, ...allTvshows], "");
+    createSearchIndex([...allAnimangas, ...allTeches, ...allTvshows]);
   },
 });

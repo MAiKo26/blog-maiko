@@ -8,7 +8,7 @@ import {
 } from "body-scroll-lock";
 import { Fragment, useState, useEffect, useRef } from "react";
 import Link from "./Link";
-import headerNavLinks from "src/data/headerNavLinks";
+import headerNavLinks from "@/data/headerNavLinks";
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
@@ -17,10 +17,10 @@ const MobileNav = () => {
   const onToggleNav = () => {
     setNavShow((status) => {
       if (status) {
-        enableBodyScroll(navRef.current);
+        enableBodyScroll(navRef.current!);
       } else {
         // Prevent scrolling
-        disableBodyScroll(navRef.current);
+        disableBodyScroll(navRef.current!);
       }
       return !status;
     });

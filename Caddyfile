@@ -1,0 +1,3 @@
+blog.maiko26.tn {
+  reverse_proxy web:3000
+}

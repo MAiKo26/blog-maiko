@@ -1,8 +1,8 @@
 "use client";
 
-import { Comments as CommentsComponent } from "pliny/comments";
+import { Comments as CommentsComponent } from "pliny/comments/index.js";
 import { useState } from "react";
-import siteMetadata from "src/data/siteMetadata";
+import siteMetadata from "@/data/siteMetadata";
 
 export default function Comments({ slug }: { slug: string }) {
   const [loadComments, setLoadComments] = useState(false);
