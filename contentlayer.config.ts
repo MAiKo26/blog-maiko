@@ -27,6 +27,7 @@ import rehypePrismPlus from "rehype-prism-plus";
 import rehypePresetMinify from "rehype-preset-minify";
 import siteMetadata from "./src/data/siteMetadata";
 import {allCoreContent, sortPosts} from "pliny/utils/contentlayer.js";
+import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 
 const root = process.cwd();
 const isProduction = process.env.NODE_ENV === "production";
@@ -257,10 +258,10 @@ export default makeSource({
   },
   onSuccess: async (importData) => {
     const {allAnimangas, allTeches, allTvshows} = await importData();
-    createTagCount(allAnimangas, "animanga");
-    createTagCount(allTeches, "tech");
-    createTagCount(allTvshows, "tvshows");
-    createTagCount([...allAnimangas, ...allTeches, ...allTvshows], "");
-    createSearchIndex([...allAnimangas, ...allTeches, ...allTvshows]);
+    createTagCount(DateFilteringHelper(allAnimangas), "animanga");
+    createTagCount(DateFilteringHelper(allTeches), "tech");
+    createTagCount(DateFilteringHelper(allTvshows), "tvshows");
+    createTagCount(DateFilteringHelper([...allAnimangas, ...allTeches, ...allTvshows]), "");
+    createSearchIndex(DateFilteringHelper([...allAnimangas, ...allTeches, ...allTvshows]));
   },
 });

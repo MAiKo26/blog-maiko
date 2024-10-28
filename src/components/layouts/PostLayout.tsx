@@ -9,7 +9,6 @@ import siteMetadata from "@/data/siteMetadata";
 import type { Animanga, Authors, Tech, Tvshows } from "contentlayer/generated";
 import { CoreContent } from "pliny/utils/contentlayer.js";
 import { ReactNode } from "react";
-import ViewCount from "../ViewCount";
 
 const editUrl = (path: string) =>
   `${siteMetadata.siteRepo}/blob/main/data/${path}`;
@@ -144,7 +143,7 @@ export default function PostLayout({
                   </div>
                 )}
 
-                <ViewCount url={filePath} />
+                {/* <ViewCount url={filePath} /> */}
 
                 {(next || prev) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">

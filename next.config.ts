@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 import { withContentlayer } from "next-contentlayer2";
 
+
+
+const nextConfig: NextConfig = {
+  output: "standalone",
+  images: { unoptimized: true },
+
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  async headers() {
+    return [{ source: "/(.*)", headers: securityHeaders }];
+  },
+};
+
+export default withContentlayer(nextConfig);
+
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is;
@@ -49,15 +63,3 @@ const securityHeaders = [
     value: "camera=(), microphone=(), geolocation=()",
   },
 ];
-
-const nextConfig: NextConfig = {
-  output: "standalone",
-  images: { unoptimized: true },
-
-  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  async headers() {
-    return [{ source: "/(.*)", headers: securityHeaders }];
-  },
-};
-
-export default withContentlayer(nextConfig);

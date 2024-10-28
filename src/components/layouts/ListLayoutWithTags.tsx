@@ -4,6 +4,7 @@
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/data/siteMetadata";
+import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 import generalTagData from "@/tags/tag-data.json";
 import type { Animanga, Tech, Tvshows } from "contentlayer/generated";
 import { slug } from "github-slugger";
@@ -86,7 +87,7 @@ export default function ListLayoutWithTags({
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a]);
 
   const displayPosts =
-    initialDisplayPosts.length > 0 ? initialDisplayPosts : posts;
+    initialDisplayPosts.length > 0 ? DateFilteringHelper(initialDisplayPosts) : DateFilteringHelper(posts);
 
   return (
     <>
