@@ -8,6 +8,7 @@ import type { Animanga, Tech, Tvshows } from "contentlayer/generated";
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/data/siteMetadata";
+import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 
 interface PaginationProps {
   totalPages: number;
@@ -77,7 +78,7 @@ export default function ListLayout({
   pagination,
 }: ListLayoutProps) {
   const [searchValue, setSearchValue] = useState("");
-  const filteredBlogPosts = posts.filter((post) => {
+  const filteredBlogPosts = DateFilteringHelper(posts).filter((post) => {
     const searchContent = post.title + post.summary + post.tags?.join(" ");
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
@@ -85,8 +86,9 @@ export default function ListLayout({
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue
-      ? initialDisplayPosts
-      : filteredBlogPosts;
+      ? DateFilteringHelper(initialDisplayPosts)
+      : DateFilteringHelper(filteredBlogPosts);
+      
 
   return (
     <>

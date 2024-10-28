@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import Tag from "@/components/Tag";
 import { Button } from "@/components/ui/button";
 import siteMetadata from "@/data/siteMetadata";
+import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 import { Animanga, Tech, Tvshows } from "contentlayer/generated";
 import { CoreContent } from "pliny/utils/contentlayer.js";
 import { formatDate } from "pliny/utils/formatDate.js";
@@ -16,6 +17,7 @@ export default function Home({
   posts: CoreContent<Animanga | Tech | Tvshows>[];
 }) {
   const [maxPosts, setMaxPosts] = useState(MAX_DISPLAY);
+  const postsFiltered = DateFilteringHelper(posts)
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -25,8 +27,8 @@ export default function Home({
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && "No posts found."}
-          {posts.slice(0, maxPosts).map((post) => {
+          {!postsFiltered.length && "No posts found."}
+          {postsFiltered.slice(0, maxPosts).map((post) => {
             const { slug, date, title, summary, tags, category } = post;
             return (
               <li key={slug} className="py-12">
@@ -78,7 +80,7 @@ export default function Home({
           })}
         </ul>
       </div>
-      {posts.length > maxPosts && (
+      {postsFiltered.length > maxPosts && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Button
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
