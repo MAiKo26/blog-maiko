@@ -4,9 +4,12 @@ date: "2024-10-25"
 tags: ["next.js", "vercel"]
 draft: false
 summary: "Next.js Conf 2024 revealed powerful updates for Next.js 15, including simplified data handling, the high-speed Turbopack, advanced caching, and enhanced self-hosting options, setting a new standard for performance and developer experience."
+images: ["/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-1.webp","/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-2.webp","/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-3.webp","/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-4.webp"]
 ---
 
-# Next.js conf24
+![Next.js pass](/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-1.webp)
+
+# What's new ?
 
 On 24th Octobre we had Next.js conf24 an amazing event where the Vercel team shared the newest and latest updates about Next.js and its future trajectory.
 
@@ -24,9 +27,9 @@ In the conference there were some big updates followed by other small remarkable
 
 So much complexity comes bundled in Next.js and React ecosystem as a whole and Server components came to simplify all of that Dynamic APIs (headers, cookies, searchParams...) and Route config options (revalidate, fetchCache...) and all the data fetching complexity.
 
-Minimize image
-Edit image
-Delete image
+
+![Flight Code Demonstration](/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-2.webp)
+
 
 So Next.js 15 focused on simplifying data fetching and make it work like you expect with no magic or over caching.
 
@@ -34,9 +37,7 @@ So Next.js 15 focused on simplifying data fetching and make it work like you exp
 
 To make it right, you have to iterate over and over again to go from an idea to ship.
 
-Minimize image
-Edit image
-Delete image
+![Idea to Ship](/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-3.webp)
 
 And this is where _Turbopack_ came into prominence not just for speed but also for reliability and DX friendliness.
 
@@ -60,9 +61,7 @@ unstable_cache is now pretty much deprecated as "use cache" is considered it's s
 
 Also for revalidation cacheTag and cacheLife are APIs introduced to give you more control on caching while getting rid of other deprecated methods like `fetch("", { cache: "no-store"})` , `"force-dynamic"` , `"force-cache"` , `export const revalidate` etc... which weren't as intuitive to use.
 
-Minimize image
-Edit image
-Delete image
+![use cache Code Demonstration](/images/content/tech/nextjs-conf24-what-is-new-in-nextjs-15-4.webp)
 
 Ship it
 Self-Hosting has been a huge issue for Next.js as it seemed hosting Next outside of Vercel felt impossible and it even sparked an entire Open Source Community dedicated to making Next.js truly Open Source and hostable anywhere called OpenNext and here the Vercel team renewed their commitement to making Next.js truly easy to host anywhere not just on Vercel.
@@ -75,4 +74,3 @@ Third, Sharp Installation is now Automatic bundled with Next.js instead of their
 
 And finally Node.js middleware is now supported by Next.js and Vercel has partnered with many known self-hosting services to create adapters and docs under a [new Github organization Next.js](https://github.com/orgs/nextjs/repositories).
 
-#Vercel #Nextjs #WebDevelopement #React #JavaScript

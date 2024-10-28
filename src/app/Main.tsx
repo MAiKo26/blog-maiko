@@ -9,7 +9,7 @@ import { CoreContent } from "pliny/utils/contentlayer.js";
 import { formatDate } from "pliny/utils/formatDate.js";
 import { useState } from "react";
 
-const MAX_DISPLAY = 5;
+const MAX_DISPLAY = 20;
 
 export default function Home({
   posts,
@@ -17,7 +17,7 @@ export default function Home({
   posts: CoreContent<Animanga | Tech | Tvshows>[];
 }) {
   const [maxPosts, setMaxPosts] = useState(MAX_DISPLAY);
-  const postsFiltered = DateFilteringHelper(posts)
+  const postsFiltered = DateFilteringHelper(posts);
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -84,7 +84,7 @@ export default function Home({
         <div className="flex justify-end text-base font-medium leading-6">
           <Button
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            onClick={() => setMaxPosts(maxPosts + 5)}
+            onClick={() => setMaxPosts(maxPosts + 20)}
           >
             Load More
           </Button>
