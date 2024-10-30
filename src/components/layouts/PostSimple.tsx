@@ -52,14 +52,14 @@ export default function PostLayout({
                 {children}
               </div>
             </div>
-            {siteMetadata.comments && (
+            {/* {siteMetadata.comments && (
               <div
                 className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
                 id="comment"
               >
                 <Comments slug={slug} />
               </div>
-            )}
+            )} */}
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && prev.path && (
