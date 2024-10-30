@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
 import { formatDate } from "pliny/utils/formatDate.js";
 import { CoreContent } from "pliny/utils/contentlayer.js";
-import type { Animanga, Tech, Tvshows } from "contentlayer/generated";
+import type { Post } from "contentlayer/generated";
 import Comments from "@/components/Comments";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
 import SectionContainer from "@/components/SectionContainer";
-import siteMetadata from "@/data/siteMetadata";
+import siteMetadata from "@/content/siteMetadata";
 import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 
 interface LayoutProps {
-  content: CoreContent<Animanga | Tech | Tvshows>;
+  content: CoreContent<Post>;
   children: ReactNode;
   next?: { path: string; title: string };
   prev?: { path: string; title: string };

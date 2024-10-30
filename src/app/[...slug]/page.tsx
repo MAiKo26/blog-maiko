@@ -4,9 +4,9 @@ import PostBanner from "@/components/layouts/PostBanner";
 import PostLayout from "@/components/layouts/PostLayout";
 import PostSimple from "@/components/layouts/PostSimple";
 import { components } from "@/components/MDXComponents";
-import siteMetadata from "@/data/siteMetadata";
-import type { Authors, Tvshows } from "contentlayer/generated";
-import { allAuthors, allTvshows } from "contentlayer/generated";
+import siteMetadata from "@/content/siteMetadata";
+import type { Post, Authors } from "contentlayer/generated";
+import { allPosts, allAuthors } from "contentlayer/generated";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXLayoutRenderer } from "pliny/mdx-components.js";
@@ -32,7 +32,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { slug } = await params;
   const slugJoined = decodeURI(slug.join("/"));
-  const post = allTvshows.find((p) => p.slug === slugJoined);
+  const post = allPosts.find((p) => p.slug === slugJoined);
   const authorList = post?.authors || ["default"];
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author);
@@ -80,7 +80,7 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
-  return allTvshows.map((p) => ({
+  return allPosts.map((p) => ({
     slug: p.slug.split("/").map((name) => decodeURI(name)),
   }));
 };
@@ -89,7 +89,7 @@ export default async function Page({ params }: { params: Params }) {
   const { slug } = await params;
   const slugJoined = decodeURI(slug.join("/"));
   // Filter out drafts in production
-  const sortedCoreContents = allCoreContent(sortPosts(allTvshows));
+  const sortedCoreContents = allCoreContent(sortPosts(allPosts));
   const postIndex = sortedCoreContents.findIndex((p) => p.slug === slugJoined);
   if (postIndex === -1) {
     return notFound();
@@ -97,7 +97,7 @@ export default async function Page({ params }: { params: Params }) {
 
   const prev = sortedCoreContents[postIndex + 1];
   const next = sortedCoreContents[postIndex - 1];
-  const post = allTvshows.find((p) => p.slug === slugJoined) as Tvshows;
+  const post = allPosts.find((p) => p.slug === slugJoined) as Post;
   const authorList = post?.authors || ["default"];
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author);

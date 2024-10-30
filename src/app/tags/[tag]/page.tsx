@@ -1,8 +1,8 @@
 import { slug } from "github-slugger";
 import { allCoreContent, sortPosts } from "pliny/utils/contentlayer.js";
-import siteMetadata from "@/data/siteMetadata";
+import siteMetadata from "@/content/siteMetadata";
 import ListLayout from "@/components/layouts/ListLayoutWithTags";
-import { allAnimangas, allTeches, allTvshows } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import tagData from "@/tags/tag-data.json";
 import { genPageMetadata } from "@/app/seo";
 import { Metadata } from "next";
@@ -45,7 +45,7 @@ export default async function TagPage({ params }: { params: Params }) {
     tagDecoded[0].toUpperCase() + tagDecoded.split(" ").join("-").slice(1);
   const filteredPosts = allCoreContent(
     sortPosts(
-      [...allAnimangas, ...allTeches, ...allTvshows].filter(
+      allPosts.filter(
         (post) =>
           post.tags && post.tags.map((t) => slug(t)).includes(tagDecoded),
       ),

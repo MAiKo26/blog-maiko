@@ -5,8 +5,8 @@ import PageTitle from "@/components/PageTitle";
 import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import SectionContainer from "@/components/SectionContainer";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/data/siteMetadata";
-import type { Animanga, Authors, Tech, Tvshows } from "contentlayer/generated";
+import siteMetadata from "@/content/siteMetadata";
+import type { Post, Authors } from "contentlayer/generated";
 import { CoreContent } from "pliny/utils/contentlayer.js";
 import { ReactNode } from "react";
 
@@ -23,7 +23,7 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 };
 
 interface LayoutProps {
-  content: CoreContent<Animanga | Tech | Tvshows>;
+  content: CoreContent<Post>;
   authorDetails: CoreContent<Authors>[];
   next?: { path: string; title: string };
   prev?: { path: string; title: string };
@@ -153,7 +153,11 @@ export default function PostLayout({
                           Previous Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${prev.path}`}>{prev.title}</Link>
+                          <Link
+                            href={`/${prev.path.split("/").slice(1).join("/")}`}
+                          >
+                            {prev.title}
+                          </Link>
                         </div>
                       </div>
                     )}
@@ -163,7 +167,11 @@ export default function PostLayout({
                           Next Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${next.path}`}>{next.title}</Link>
+                          <Link
+                            href={`/${next.path.split("/").slice(1).join("/")}`}
+                          >
+                            {next.title}
+                          </Link>
                         </div>
                       </div>
                     )}

@@ -3,10 +3,10 @@
 
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/data/siteMetadata";
+import siteMetadata from "@/content/siteMetadata";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 import generalTagData from "@/tags/tag-data.json";
-import type { Animanga, Tech, Tvshows } from "contentlayer/generated";
+import type { Post } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import { usePathname } from "next/navigation";
 import { CoreContent } from "pliny/utils/contentlayer.js";
@@ -17,9 +17,9 @@ interface PaginationProps {
   currentPage: number;
 }
 interface ListLayoutProps {
-  posts: CoreContent<Tech | Tvshows | Animanga>[];
+  posts: CoreContent<Post>[];
   title: string;
-  initialDisplayPosts?: CoreContent<Tech | Tvshows | Animanga>[];
+  initialDisplayPosts?: CoreContent<Post>[];
   pagination?: PaginationProps;
   tagData?: Record<string, number>;
 }
@@ -87,7 +87,9 @@ export default function ListLayoutWithTags({
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a]);
 
   const displayPosts =
-    initialDisplayPosts.length > 0 ? DateFilteringHelper(initialDisplayPosts) : DateFilteringHelper(posts);
+    initialDisplayPosts.length > 0
+      ? DateFilteringHelper(initialDisplayPosts)
+      : DateFilteringHelper(posts);
 
   return (
     <>
@@ -148,7 +150,7 @@ export default function ListLayoutWithTags({
                         <div>
                           <h2 className="text-2xl font-bold leading-8 tracking-tight">
                             <Link
-                              href={`/${path}`}
+                              href={`/${path.split("/").slice(1).join("/")}`}
                               className="text-gray-900 dark:text-gray-100"
                             >
                               {title}

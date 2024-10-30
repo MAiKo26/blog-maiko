@@ -4,11 +4,7 @@ import { slug } from "github-slugger";
 import { escape } from "pliny/utils/htmlEscaper.js";
 import siteMetadata from "../data/siteMetadata.js";
 import tagData from "../app/tag-data.json" assert { type: "json" };
-import {
-  allAnimangas,
-  allTeches,
-  allTvshows,
-} from "../.contentlayer/generated/index.mjs";
+import { allPosts } from "../.contentlayer/generated/index.mjs";
 import { sortPosts } from "pliny/utils/contentlayer.js";
 
 const outputFolder = process.env.EXPORT ? "out" : "public";
@@ -63,7 +59,7 @@ async function generateRSS(config, allBlogs, page = "feed.xml") {
 }
 
 const rss = () => {
-  generateRSS(siteMetadata, [...allAnimangas, ...allTeches, ...allTvshows]);
+  generateRSS(siteMetadata, allPosts);
   console.log("RSS feed generated...");
 };
 export default rss;

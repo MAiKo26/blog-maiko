@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import headerNavLinks from "@/data/headerNavLinks";
-import siteMetadata from "@/data/siteMetadata";
+import headerNavLinks from "@/content/headerNavLinks";
+import siteMetadata from "@/content/siteMetadata";
 import Link from "./Link";
 import MobileNav from "./MobileNav";
 import SearchButton from "./SearchButton";

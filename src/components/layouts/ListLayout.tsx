@@ -4,10 +4,10 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { formatDate } from "pliny/utils/formatDate.js";
 import { CoreContent } from "pliny/utils/contentlayer.js";
-import type { Animanga, Tech, Tvshows } from "contentlayer/generated";
+import type { Post } from "contentlayer/generated";
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/data/siteMetadata";
+import siteMetadata from "@/content/siteMetadata";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 
 interface PaginationProps {
@@ -15,9 +15,9 @@ interface PaginationProps {
   currentPage: number;
 }
 interface ListLayoutProps {
-  posts: CoreContent<Animanga | Tech | Tvshows>[];
+  posts: CoreContent<Post>[];
   title: string;
-  initialDisplayPosts?: CoreContent<Animanga | Tech | Tvshows>[];
+  initialDisplayPosts?: CoreContent<Post>[];
   pagination?: PaginationProps;
 }
 
@@ -88,7 +88,6 @@ export default function ListLayout({
     initialDisplayPosts.length > 0 && !searchValue
       ? DateFilteringHelper(initialDisplayPosts)
       : DateFilteringHelper(filteredBlogPosts);
-      
 
   return (
     <>

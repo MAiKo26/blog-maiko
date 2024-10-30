@@ -6,10 +6,12 @@ export function NewsletterForm() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  async function handleSubmit(event: any) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+  async function handleSubmit({
+    currentTarget,
+    preventDefault,
+  }: React.FormEvent<HTMLFormElement>) {
+    preventDefault();
+    const formData = new FormData(currentTarget);
 
     setError(false);
     setMessage("Submitting...");
