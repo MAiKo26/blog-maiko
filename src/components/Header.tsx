@@ -25,7 +25,7 @@ const Header = () => {
             >
               {link.title}
               {link.title === "About" ? (
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
               ) : null}
             </Link>
           ))}
