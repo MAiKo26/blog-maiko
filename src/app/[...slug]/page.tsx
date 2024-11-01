@@ -15,6 +15,7 @@ import {
   coreContent,
   sortPosts,
 } from "pliny/utils/contentlayer.js";
+import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 
 const defaultLayout = "PostLayout";
 const layouts = {
@@ -32,7 +33,8 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { slug } = await params;
   const slugJoined = decodeURI(slug.join("/"));
-  const post = allPosts.find((p) => p.slug === slugJoined);
+  const allPostsDateFiltered = DateFilteringHelper(allPosts);
+  const post = allPostsDateFiltered.find((p) => p.slug === slugJoined);
   const authorList = post?.authors || ["default"];
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author);
@@ -80,7 +82,7 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
-  return allPosts.map((p) => ({
+  return DateFilteringHelper(allPosts).map((p) => ({
     slug: p.slug.split("/").map((name) => decodeURI(name)),
   }));
 };
@@ -89,7 +91,9 @@ export default async function Page({ params }: { params: Params }) {
   const { slug } = await params;
   const slugJoined = decodeURI(slug.join("/"));
   // Filter out drafts in production
-  const sortedCoreContents = allCoreContent(sortPosts(allPosts));
+  const sortedCoreContents = DateFilteringHelper(
+    allCoreContent(sortPosts(allPosts)),
+  );
   const postIndex = sortedCoreContents.findIndex((p) => p.slug === slugJoined);
   if (postIndex === -1) {
     return notFound();
@@ -97,7 +101,9 @@ export default async function Page({ params }: { params: Params }) {
 
   const prev = sortedCoreContents[postIndex + 1];
   const next = sortedCoreContents[postIndex - 1];
-  const post = allPosts.find((p) => p.slug === slugJoined) as Post;
+  const post = DateFilteringHelper(allPosts).find(
+    (p) => p.slug === slugJoined,
+  ) as Post;
   const authorList = post?.authors || ["default"];
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author);

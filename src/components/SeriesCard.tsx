@@ -1,5 +1,6 @@
 "use client";
 
+import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 import { Series, allPosts } from "contentlayer/generated";
 import Link from "next/link";
 
@@ -8,7 +9,7 @@ export type PostSeriesProps = {
 };
 
 export const PostSeriesBox = ({ currentSerie }: PostSeriesProps) => {
-  const currentPosts = allPosts.filter(
+  const currentPosts = DateFilteringHelper(allPosts).filter(
     (post) => post.series?.title === currentSerie.title,
   );
 

@@ -1,15 +1,14 @@
-import Comments from "@/components/Comments";
 import Image from "@/components/Image";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
 import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import SectionContainer from "@/components/SectionContainer";
+import { PostSeriesBox } from "@/components/SeriesCard";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/content/siteMetadata";
-import type { Post, Authors } from "contentlayer/generated";
+import type { Authors, Post } from "contentlayer/generated";
 import { CoreContent } from "pliny/utils/contentlayer.js";
 import { ReactNode } from "react";
-import { PostSeriesBox } from "@/components/SeriesCard";
 
 const editUrl = (path: string) =>
   `${siteMetadata.siteRepo}/blob/main/data/${path}`;
@@ -38,8 +37,7 @@ export default function PostLayout({
   prev,
   children,
 }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags, series } = content;
-  const basePath = path.split("/")[0];
+  const { filePath, path, date, title, tags, series } = content;
 
   return (
     <SectionContainer>
@@ -186,7 +184,7 @@ export default function PostLayout({
               </div>
               <div className="pt-4 xl:pt-8">
                 <Link
-                  href={`/${basePath}`}
+                  href="/"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                   aria-label="Back to the blog"
                 >
