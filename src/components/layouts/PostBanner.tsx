@@ -1,14 +1,12 @@
-import { ReactNode } from "react";
 import Image from "@/components/Image";
-import Bleed from "pliny/ui/Bleed.js";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import type { Post } from "contentlayer/generated";
-import Comments from "@/components/Comments";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
-import SectionContainer from "@/components/SectionContainer";
-import siteMetadata from "@/content/siteMetadata";
 import ScrollTopAndComment from "@/components/ScrollTopAndComment";
+import SectionContainer from "@/components/SectionContainer";
+import type { Post } from "contentlayer/generated";
+import Bleed from "pliny/ui/Bleed.js";
+import { CoreContent } from "pliny/utils/contentlayer.js";
+import { ReactNode } from "react";
 
 interface LayoutProps {
   content: CoreContent<Post>;
@@ -23,7 +21,7 @@ export default function PostMinimal({
   prev,
   children,
 }: LayoutProps) {
-  const { slug, title, images } = content;
+  const { title, images } = content;
   const displayImage =
     images && images.length > 0
       ? images[0]

@@ -1,13 +1,12 @@
-import { ReactNode } from "react";
-import { formatDate } from "pliny/utils/formatDate.js";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import type { Post } from "contentlayer/generated";
-import Comments from "@/components/Comments";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
+import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import SectionContainer from "@/components/SectionContainer";
 import siteMetadata from "@/content/siteMetadata";
-import ScrollTopAndComment from "@/components/ScrollTopAndComment";
+import type { Post } from "contentlayer/generated";
+import { CoreContent } from "pliny/utils/contentlayer.js";
+import { formatDate } from "pliny/utils/formatDate.js";
+import { ReactNode } from "react";
 
 interface LayoutProps {
   content: CoreContent<Post>;
@@ -22,7 +21,7 @@ export default function PostLayout({
   prev,
   children,
 }: LayoutProps) {
-  const { slug, date, title } = content;
+  const { date, title } = content;
 
   return (
     <SectionContainer>
