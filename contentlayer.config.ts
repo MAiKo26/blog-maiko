@@ -92,7 +92,12 @@ function createSearchIndex(allItems: any) {
   ) {
     writeFileSync(
       `public/${path.basename(siteMetadata.search.kbarConfig.searchDocumentsPath)}`,
-      JSON.stringify(allCoreContent(sortPosts(allItems))),
+      JSON.stringify(
+        allCoreContent(sortPosts(allItems)).map((item) => ({
+          ...item,
+          path: item.path.replace(/^posts\//, ""),
+        })),
+      ),
     );
     console.log("Local search index generated...");
   }
