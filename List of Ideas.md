@@ -3,16 +3,13 @@
 - Top 10 Fights Manga
 - Top 10 Fights Anime
 - Why Sports Anime is bad
+
 - Arcane Season 1 Review
 - Attack on Titan Full Review
-- Avatar Last Airbender Review
-- Berserk Review
 - Chainsaw Man Review
-- Death Note Review
 - Demon Slayer Review
 - Dragon Ball Review
 - Fairy Tail Review
-- Full Metal Alchemist Review
 - Haikyuu Review
 - HxH Review
 - Invincible Review
@@ -20,10 +17,8 @@
 - Jjk Review
 - My Hero Academia Review
 - One Piece Review
-- OPM S2 Review
 - Vinland Saga Review
 - Hajime No Ippo Review
-- Vagabond Review
 - Blue Lock Review
 
 - Worst shows I watched (Legacies, The Good Doctor, Blindspot, Hawkeye, Cowboy bepop , Golbin , Shooter)
