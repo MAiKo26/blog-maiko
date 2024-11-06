@@ -6,18 +6,10 @@
 
 - Arcane Season 1 Review
 - Attack on Titan Full Review
-- Chainsaw Man Review
-- Demon Slayer Review
-- Dragon Ball Review
-- Fairy Tail Review
-- Haikyuu Review
 - HxH Review
-- Invincible Review
-- Jojo Review
-- Jjk Review
-- My Hero Academia Review
 - One Piece Review
 - Vinland Saga Review
+- Haikyuu Review
 - Hajime No Ippo Review
 - Blue Lock Review
 
