@@ -2,8 +2,6 @@
 import prisma from "@/lib/db";
 
 export async function getViewCount(url: string): Promise<number> {
-  console.log(url);
-
   if (!url) return 0;
 
   try {

@@ -222,7 +222,6 @@ function createSearchIndex(allItems) {
         }))
       )
     );
-    console.log("Local search index generated...");
   }
 }
 var Series = defineNestedType(() => ({
@@ -335,4 +334,4 @@ export {
   Series,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-DLMHCHC7.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-3NNOGU27.mjs.map

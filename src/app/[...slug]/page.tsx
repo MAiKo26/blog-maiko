@@ -6,7 +6,7 @@ import PostSimple from "@/components/layouts/PostSimple";
 import { components } from "@/components/MDXComponents";
 import siteMetadata from "@/content/siteMetadata";
 import type { Post, Authors } from "contentlayer/generated";
-import { allPosts, allAuthors } from "contentlayer/generated";
+import { allAuthors } from "contentlayer/generated";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXLayoutRenderer } from "pliny/mdx-components.js";
@@ -16,6 +16,7 @@ import {
   sortPosts,
 } from "pliny/utils/contentlayer.js";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
+import { getMainIndex } from "@/lib/github";
 
 const defaultLayout = "PostLayout";
 const layouts = {
@@ -33,6 +34,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { slug } = await params;
   const slugJoined = decodeURI(slug.join("/"));
+  const allPosts = await getMainIndex();
   const allPostsDateFiltered = DateFilteringHelper(allPosts);
   const post = allPostsDateFiltered.find((p) => p.slug === slugJoined);
   const authorList = post?.authors || ["default"];
@@ -82,12 +84,16 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
+  const allPosts = await getMainIndex();
+
   return DateFilteringHelper(allPosts).map((p) => ({
     slug: p.slug.split("/").map((name) => decodeURI(name)),
   }));
 };
 
 export default async function Page({ params }: { params: Params }) {
+  const allPosts = await getMainIndex();
+
   const { slug } = await params;
   const slugJoined = decodeURI(slug.join("/"));
   // Filter out drafts in production

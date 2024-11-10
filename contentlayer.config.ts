@@ -99,7 +99,6 @@ function createSearchIndex(allItems: any) {
         })),
       ),
     );
-    console.log("Local search index generated...");
   }
 }
 

@@ -2,11 +2,11 @@ import { slug } from "github-slugger";
 import { allCoreContent, sortPosts } from "pliny/utils/contentlayer.js";
 import siteMetadata from "@/content/siteMetadata";
 import ListLayout from "@/components/layouts/ListLayoutWithTags";
-import { allPosts } from "contentlayer/generated";
 import tagData from "@/tags/tag-data.json";
 import { genPageMetadata } from "@/app/seo";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getMainIndex } from "@/lib/github";
 
 export async function generateMetadata({
   params,
@@ -38,6 +38,7 @@ export const generateStaticParams = async () => {
 type Params = Promise<{ tag: string }>;
 
 export default async function TagPage({ params }: { params: Params }) {
+  const allPosts = await getMainIndex();
   const { tag } = await params;
   const tagDecoded = decodeURI(tag);
   // Capitalize first letter and convert space to dash
