@@ -22,7 +22,7 @@ async function fetchGitHubApi(endpoint: string) {
       // Add auth token if you need higher rate limits
       // 'Authorization': `token ${process.env.GITHUB_TOKEN}`
     },
-    next: { revalidate: 3600 }, // Cache for 1 hour
+    next: { revalidate: 1 }, // Cache for 1 hour
   });
 
   if (!response.ok) {
