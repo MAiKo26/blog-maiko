@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Mohamed Aziz Karoui",
+    "avatar": "/images/avatar.webp",
+    "occupation": "Software Engineer",
+    "email": "contact.mohamedazizkaroui@gmail.com",
+    "twitter": "https://twitter.com/maiko26_",
+    "linkedin": "https://www.linkedin.com/in/mohamed-aziz-karoui/",
+    "github": "https://github.com/maiko26",
+    "category": "authors",
+    "body": {
+      "raw": "",
+      "code": "var Component=(()=>{var d=Object.create;var i=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var w=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var f=(t,a)=>()=>(a||t((a={exports:{}}).exports,a),a.exports),k=(t,a)=>{for(var e in a)i(t,e,{get:a[e],enumerable:!0})},m=(t,a,e,r)=>{if(a&&typeof a==\"object\"||typeof a==\"function\")for(let o of w(a))!x.call(t,o)&&o!==e&&i(t,o,{get:()=>a[o],enumerable:!(r=p(a,o))||r.enumerable});return t};var l=(t,a,e)=>(e=t!=null?d(g(t)):{},m(a||!t||!t.__esModule?i(e,\"default\",{value:t,enumerable:!0}):e,t)),z=t=>m(i({},\"__esModule\",{value:!0}),t);var u=f((j,c)=>{c.exports=_jsx_runtime});var M={};k(M,{default:()=>h,frontmatter:()=>_});var n=l(u()),_={name:\"Mohamed Aziz Karoui\",avatar:\"/images/avatar.webp\",occupation:\"Software Engineer\",email:\"contact.mohamedazizkaroui@gmail.com\",twitter:\"https://twitter.com/maiko26_\",linkedin:\"https://www.linkedin.com/in/mohamed-aziz-karoui/\",github:\"https://github.com/maiko26\"};function s(t){return(0,n.jsx)(n.Fragment,{})}function h(t={}){let{wrapper:a}=t.components||{};return a?(0,n.jsx)(a,{...t,children:(0,n.jsx)(s,{...t})}):s(t)}return z(M);})();\n;return Component;"
+    },
+    "_id": "authors/default.mdx",
+    "_raw": {
+      "sourceFilePath": "authors/default.mdx",
+      "sourceFileName": "default.mdx",
+      "sourceFileDir": "authors",
+      "contentType": "mdx",
+      "flattenedPath": "authors/default"
+    },
+    "type": "Authors",
+    "readingTime": {
+      "text": "0 min read",
+      "minutes": 0,
+      "time": 0,
+      "words": 0
+    },
+    "slug": "default",
+    "path": "authors/default",
+    "filePath": "authors/default.mdx",
+    "toc": []
+  }
+]

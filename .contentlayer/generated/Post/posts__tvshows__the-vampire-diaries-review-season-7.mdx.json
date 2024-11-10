@@ -1,0 +1,75 @@
+{
+  "title": "The Vampire Diaries Season 7 Review",
+  "series": {
+    "title": "TVD Review",
+    "order": 7,
+    "type": "Series",
+    "_raw": {}
+  },
+  "date": "2024-11-25T00:00:00.000Z",
+  "tags": [
+    "The Vampire Diaries",
+    "TV Show"
+  ],
+  "draft": false,
+  "summary": "A Review of CW's popular Show The Vampire Diaries, focusing on the developments in Season 7.",
+  "body": {
+    "raw": "\n# The Vampire Diaries Season 7 Review\n\n## Opening Thoughts\n\nSeason 7 marks a turning point for several characters, particularly Caroline Forbes. For the first time, I felt her character truly shined, but the season also introduced new dynamics and challenges that complicated the overall narrative.\n\n## The Plot of Season 7\n\nThis season dives into the aftermath of Elena's departure, exploring how the remaining characters cope with the loss and the new threats that arise. Caroline's evolution as a character is a highlight, but the introduction of Enzo detracts from the season's strengths.\n\n### Key Plot Points\n\n- **Caroline Forbes' Development**: Season 7 is a turning point for Caroline, showcasing her growth as a character. Her role as a parent brings out a new side of her, demonstrating her nurturing qualities and depth. However, the bittersweet nature of her character arc is overshadowed by her later involvement in the creation of \"Legacies\", which's the worst show ever and I hate her kids in that show but whatever, I will get into it on TO review.\n\n- **Bonnie and Damon's Friendship**: The dynamic between Bonnie and Damon continues to flourish this season, adding a layer of complexity to their relationship. Their friendship is heartwarming, especially as Damon grapples with the idea of losing Bonnie while waiting for her to die. This tension creates a poignant backdrop for their interactions, highlighting their deep bond and unwavering support for each other.\n\n- **Enzo's Impact**: Unfortunately, Enzo's introduction does not resonate with me. His character feels out of place, and his relationship with Bonnie creates a contrast that I found less engaging. His presence detracts from the compelling friendships and dynamics that defined previous seasons.\n\n## Rating\n\nWhile Season 7 presents some engaging character developments, particularly for Caroline and the continued growth of Bonnie and Damon's friendship, the introduction of the annoying Enzo hinder my overall enjoyment.\n\n**Rating: 12/20**\n",
+    "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var w=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var f=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),v=(n,e)=>{for(var t in e)r(n,t,{get:e[t],enumerable:!0})},s=(n,e,t,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of w(e))!u.call(n,i)&&i!==t&&r(n,i,{get:()=>e[i],enumerable:!(o=g(e,i))||o.enumerable});return n};var x=(n,e,t)=>(t=n!=null?p(m(n)):{},s(e||!n||!n.__esModule?r(t,\"default\",{value:n,enumerable:!0}):t,n)),y=n=>s(r({},\"__esModule\",{value:!0}),n);var l=f((C,h)=>{h.exports=_jsx_runtime});var k={};v(k,{default:()=>c,frontmatter:()=>b});var a=x(l()),b={title:\"The Vampire Diaries Season 7 Review\",date:\"2024-11-25\",series:{order:7,title:\"TVD Review\"},tags:[\"The Vampire Diaries\",\"TV Show\"],draft:!1,summary:\"A Review of CW's popular Show The Vampire Diaries, focusing on the developments in Season 7.\"};function d(n){let e={a:\"a\",h1:\"h1\",h2:\"h2\",h3:\"h3\",li:\"li\",p:\"p\",path:\"path\",span:\"span\",strong:\"strong\",svg:\"svg\",ul:\"ul\",...n.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h1,{className:\"content-header\",id:\"the-vampire-diaries-season-7-review\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#the-vampire-diaries-season-7-review\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"The Vampire Diaries Season 7 Review\"]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"opening-thoughts\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#opening-thoughts\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Opening Thoughts\"]}),(0,a.jsx)(e.p,{children:\"Season 7 marks a turning point for several characters, particularly Caroline Forbes. For the first time, I felt her character truly shined, but the season also introduced new dynamics and challenges that complicated the overall narrative.\"}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"the-plot-of-season-7\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#the-plot-of-season-7\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"The Plot of Season 7\"]}),(0,a.jsx)(e.p,{children:\"This season dives into the aftermath of Elena's departure, exploring how the remaining characters cope with the loss and the new threats that arise. Caroline's evolution as a character is a highlight, but the introduction of Enzo detracts from the season's strengths.\"}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"key-plot-points\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#key-plot-points\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Key Plot Points\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:(0,a.jsxs)(e.p,{children:[(0,a.jsx)(e.strong,{children:\"Caroline Forbes' Development\"}),`: Season 7 is a turning point for Caroline, showcasing her growth as a character. Her role as a parent brings out a new side of her, demonstrating her nurturing qualities and depth. However, the bittersweet nature of her character arc is overshadowed by her later involvement in the creation of \"Legacies\", which's the worst show ever and I hate her kids in that show but whatever, I will get into it on TO review.`]})}),(0,a.jsx)(e.li,{children:(0,a.jsxs)(e.p,{children:[(0,a.jsx)(e.strong,{children:\"Bonnie and Damon's Friendship\"}),\": The dynamic between Bonnie and Damon continues to flourish this season, adding a layer of complexity to their relationship. Their friendship is heartwarming, especially as Damon grapples with the idea of losing Bonnie while waiting for her to die. This tension creates a poignant backdrop for their interactions, highlighting their deep bond and unwavering support for each other.\"]})}),(0,a.jsx)(e.li,{children:(0,a.jsxs)(e.p,{children:[(0,a.jsx)(e.strong,{children:\"Enzo's Impact\"}),\": Unfortunately, Enzo's introduction does not resonate with me. His character feels out of place, and his relationship with Bonnie creates a contrast that I found less engaging. His presence detracts from the compelling friendships and dynamics that defined previous seasons.\"]})})]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"rating\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#rating\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Rating\"]}),(0,a.jsx)(e.p,{children:\"While Season 7 presents some engaging character developments, particularly for Caroline and the continued growth of Bonnie and Damon's friendship, the introduction of the annoying Enzo hinder my overall enjoyment.\"}),(0,a.jsx)(e.p,{children:(0,a.jsx)(e.strong,{children:\"Rating: 12/20\"})})]})}function c(n={}){let{wrapper:e}=n.components||{};return e?(0,a.jsx)(e,{...n,children:(0,a.jsx)(d,{...n})}):d(n)}return y(k);})();\n;return Component;"
+  },
+  "_id": "posts/tvshows/the-vampire-diaries-review-season-7.mdx",
+  "_raw": {
+    "sourceFilePath": "posts/tvshows/the-vampire-diaries-review-season-7.mdx",
+    "sourceFileName": "the-vampire-diaries-review-season-7.mdx",
+    "sourceFileDir": "posts/tvshows",
+    "contentType": "mdx",
+    "flattenedPath": "posts/tvshows/the-vampire-diaries-review-season-7"
+  },
+  "type": "Post",
+  "readingTime": {
+    "text": "2 min read",
+    "minutes": 1.58,
+    "time": 94800,
+    "words": 316
+  },
+  "slug": "tvshows/the-vampire-diaries-review-season-7",
+  "path": "posts/tvshows/the-vampire-diaries-review-season-7",
+  "filePath": "posts/tvshows/the-vampire-diaries-review-season-7.mdx",
+  "toc": [
+    {
+      "value": "The Vampire Diaries Season 7 Review",
+      "url": "#the-vampire-diaries-season-7-review",
+      "depth": 1
+    },
+    {
+      "value": "Opening Thoughts",
+      "url": "#opening-thoughts-14",
+      "depth": 2
+    },
+    {
+      "value": "The Plot of Season 7",
+      "url": "#the-plot-of-season-7",
+      "depth": 2
+    },
+    {
+      "value": "Key Plot Points",
+      "url": "#key-plot-points-3",
+      "depth": 3
+    },
+    {
+      "value": "Rating",
+      "url": "#rating-14",
+      "depth": 2
+    }
+  ],
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Vampire Diaries Season 7 Review",
+    "datePublished": "2024-11-25T00:00:00.000Z",
+    "dateModified": "2024-11-25T00:00:00.000Z",
+    "description": "A Review of CW's popular Show The Vampire Diaries, focusing on the developments in Season 7.",
+    "image": "/images/twitter-card.webp",
+    "url": "https://blog.maiko26.tn/posts/tvshows/the-vampire-diaries-review-season-7"
+  }
+}

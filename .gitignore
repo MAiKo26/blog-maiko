@@ -45,6 +45,6 @@ yarn-error.log*
 .env
 
 # Contentlayer
-.contentlayer
+# .contentlayer
 
 pgdata

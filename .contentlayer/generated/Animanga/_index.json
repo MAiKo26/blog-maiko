@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Naruto Review Part 1",
+    "date": "2024-10-26T00:00:00.000Z",
+    "tags": [
+      "naruto",
+      "anime",
+      "manga"
+    ],
+    "draft": false,
+    "summary": "An in-depth review of the first Part in the Naruto series...",
+    "category": "animanga",
+    "body": {
+      "raw": "\n# Naruto Review Part 1\n\n## Opening Thoughts\n\n### How I started Naruto\n\nI first got into Naruto and Anime in general in 2014, back then I was totally oppsessed with Television and binging TV Shows but I had little to know knowledge of anime or manga ... all the Anime I knew was just Spacetoon which's a Kids channel in Arabic that aired popular stuff like Dragon Ball or Hunter X Hunter (Al Kanas) but I wasn't a regular watcher, I just happened to catch the odd episode here and there.\n\nThen in 2014, my cousin introduced me to this viral thing called **Anime** and appearantly it's Japanese originated (back then I thought it's just another thing from Europe/USA) and he told me to watch his favorite Anime Naruto so I said why not, I have a lot of free time and back then I used to love binging Naruto and the show had hundred of episodes when I started.\n\nFiller or not I watched it all and I didn't know what's what, I just finished it in record time. and here I will go through the journey again starting by reviewing the first part of the story.\n\n### Setting the Scene: Team 7's dynamic\n\nAfter graduating from the Ninja Academy, Naruto, Sasuke, and Sakura form Team 7 under the leadership of the experienced ninja Kakashi Hatake. This group is quite iconic in all anime and each had a pretty decent role at the start.\n\nIt's a hot take these days but Sakura got too much hate, at least in Part 1 rewatching it Sakura is a decent character. Meanwhile, I am not a fan of Sasuke to get things started, never been a fan of this arctype of character but to be honest looking at recent evolution of sasukes in new gen anime he is still leagues above what came after him.\n\nAs for Kakashi, he was decent. I know he is pretty popular but I never got the appeal. The mysterious persona got stale after time for me.\n\nNaruto on the other hand was absolutely and with no doubt the best of the group not just because of him being the main character or anything but also he felt to have the most agency and the best dialogue in my opinion, he stands out in team 7.\n\nOverall the dynamic of this team is like I said earlier iconic and inspired many and many new gen anime to copy it (ehm jjk).\n\n### The other teams\n\nIf I had to pick today who was my favorite teams aside from 7, it was easily Team 3, 10 and 8.\n\nTeam 3 because of Kiba, I think one of the most hilarious things looking back at it is Kiba saying he will be Hokage challenging Naruto. His powers were quite unique and pretty fun.\n\nTeam 10 has my GOAT, Shikamaru who has 2 of the 5 best fights in the story and overall just a great character and the most relatable one in animanga.\n\nTeam 3 or more commonly Team Guy, just simply the best group. The group with the most interesting storyline even more than Team 7 for me, except for the female of the group which fade in irrelevance. Guy, Rock Lee and Neji Hyuga are simply some of the greatest characters in animanga.\n\n## The Plot\n\n### The first few Arcs\n\n### Chunin Exam (Greatest Arc in Shonen)\n\n### Sasuke Retrieval\n\n### End of Part 1\n\n## My favorite moments\n\n### Neji vs Naruto/Hinata\n\n### Lee vs Gara\n\n### Shikamaru\n\n### Sasuke vs Naruto\n\n## Rating\n\nGreatness, That's simply the first part\n\n**Rating : 18/20**\n",
+      "code": "var Component=(()=>{var m=Object.create;var r=Object.defineProperty;var w=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var f=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),v=(n,e)=>{for(var t in e)r(n,t,{get:e[t],enumerable:!0})},h=(n,e,t,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of p(e))!g.call(n,l)&&l!==t&&r(n,l,{get:()=>e[l],enumerable:!(i=w(e,l))||i.enumerable});return n};var k=(n,e,t)=>(t=n!=null?m(u(n)):{},h(e||!n||!n.__esModule?r(t,\"default\",{value:n,enumerable:!0}):t,n)),N=n=>h(r({},\"__esModule\",{value:!0}),n);var o=f((I,s)=>{s.exports=_jsx_runtime});var b={};v(b,{default:()=>c,frontmatter:()=>x});var a=k(o()),x={title:\"Naruto Review Part 1\",date:\"2024-10-26\",tags:[\"naruto\",\"anime\",\"manga\"],draft:!1,summary:\"An in-depth review of the first Part in the Naruto series...\"};function d(n){let e={a:\"a\",h1:\"h1\",h2:\"h2\",h3:\"h3\",p:\"p\",path:\"path\",span:\"span\",strong:\"strong\",svg:\"svg\",...n.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h1,{className:\"content-header\",id:\"naruto-review-part-1\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#naruto-review-part-1\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Naruto Review Part 1\"]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"opening-thoughts\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#opening-thoughts\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Opening Thoughts\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"how-i-started-naruto\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#how-i-started-naruto\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"How I started Naruto\"]}),(0,a.jsx)(e.p,{children:\"I first got into Naruto and Anime in general in 2014, back then I was totally oppsessed with Television and binging TV Shows but I had little to know knowledge of anime or manga ... all the Anime I knew was just Spacetoon which's a Kids channel in Arabic that aired popular stuff like Dragon Ball or Hunter X Hunter (Al Kanas) but I wasn't a regular watcher, I just happened to catch the odd episode here and there.\"}),(0,a.jsxs)(e.p,{children:[\"Then in 2014, my cousin introduced me to this viral thing called \",(0,a.jsx)(e.strong,{children:\"Anime\"}),\" and appearantly it's Japanese originated (back then I thought it's just another thing from Europe/USA) and he told me to watch his favorite Anime Naruto so I said why not, I have a lot of free time and back then I used to love binging Naruto and the show had hundred of episodes when I started.\"]}),(0,a.jsx)(e.p,{children:\"Filler or not I watched it all and I didn't know what's what, I just finished it in record time. and here I will go through the journey again starting by reviewing the first part of the story.\"}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"setting-the-scene-team-7s-dynamic\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#setting-the-scene-team-7s-dynamic\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Setting the Scene: Team 7's dynamic\"]}),(0,a.jsx)(e.p,{children:\"After graduating from the Ninja Academy, Naruto, Sasuke, and Sakura form Team 7 under the leadership of the experienced ninja Kakashi Hatake. This group is quite iconic in all anime and each had a pretty decent role at the start.\"}),(0,a.jsx)(e.p,{children:\"It's a hot take these days but Sakura got too much hate, at least in Part 1 rewatching it Sakura is a decent character. Meanwhile, I am not a fan of Sasuke to get things started, never been a fan of this arctype of character but to be honest looking at recent evolution of sasukes in new gen anime he is still leagues above what came after him.\"}),(0,a.jsx)(e.p,{children:\"As for Kakashi, he was decent. I know he is pretty popular but I never got the appeal. The mysterious persona got stale after time for me.\"}),(0,a.jsx)(e.p,{children:\"Naruto on the other hand was absolutely and with no doubt the best of the group not just because of him being the main character or anything but also he felt to have the most agency and the best dialogue in my opinion, he stands out in team 7.\"}),(0,a.jsx)(e.p,{children:\"Overall the dynamic of this team is like I said earlier iconic and inspired many and many new gen anime to copy it (ehm jjk).\"}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"the-other-teams\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#the-other-teams\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"The other teams\"]}),(0,a.jsx)(e.p,{children:\"If I had to pick today who was my favorite teams aside from 7, it was easily Team 3, 10 and 8.\"}),(0,a.jsx)(e.p,{children:\"Team 3 because of Kiba, I think one of the most hilarious things looking back at it is Kiba saying he will be Hokage challenging Naruto. His powers were quite unique and pretty fun.\"}),(0,a.jsx)(e.p,{children:\"Team 10 has my GOAT, Shikamaru who has 2 of the 5 best fights in the story and overall just a great character and the most relatable one in animanga.\"}),(0,a.jsx)(e.p,{children:\"Team 3 or more commonly Team Guy, just simply the best group. The group with the most interesting storyline even more than Team 7 for me, except for the female of the group which fade in irrelevance. Guy, Rock Lee and Neji Hyuga are simply some of the greatest characters in animanga.\"}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"the-plot\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#the-plot\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"The Plot\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"the-first-few-arcs\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#the-first-few-arcs\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"The first few Arcs\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"chunin-exam-greatest-arc-in-shonen\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#chunin-exam-greatest-arc-in-shonen\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Chunin Exam (Greatest Arc in Shonen)\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"sasuke-retrieval\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#sasuke-retrieval\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Sasuke Retrieval\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"end-of-part-1\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#end-of-part-1\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"End of Part 1\"]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"my-favorite-moments\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#my-favorite-moments\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"My favorite moments\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"neji-vs-narutohinata\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#neji-vs-narutohinata\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Neji vs Naruto/Hinata\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"lee-vs-gara\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#lee-vs-gara\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Lee vs Gara\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"shikamaru\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#shikamaru\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Shikamaru\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"sasuke-vs-naruto\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#sasuke-vs-naruto\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Sasuke vs Naruto\"]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"rating\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#rating\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Rating\"]}),(0,a.jsx)(e.p,{children:\"Greatness, That's simply the first part\"}),(0,a.jsx)(e.p,{children:(0,a.jsx)(e.strong,{children:\"Rating : 18/20\"})})]})}function c(n={}){let{wrapper:e}=n.components||{};return e?(0,a.jsx)(e,{...n,children:(0,a.jsx)(d,{...n})}):d(n)}return N(b);})();\n;return Component;"
+    },
+    "_id": "animanga/naruto-review-part-1-land-of-waves-arc.mdx",
+    "_raw": {
+      "sourceFilePath": "animanga/naruto-review-part-1-land-of-waves-arc.mdx",
+      "sourceFileName": "naruto-review-part-1-land-of-waves-arc.mdx",
+      "sourceFileDir": "animanga",
+      "contentType": "mdx",
+      "flattenedPath": "animanga/naruto-review-part-1-land-of-waves-arc"
+    },
+    "type": "Animanga",
+    "readingTime": {
+      "text": "4 min read",
+      "minutes": 3.045,
+      "time": 182700,
+      "words": 609
+    },
+    "slug": "naruto-review-part-1-land-of-waves-arc",
+    "path": "animanga/naruto-review-part-1-land-of-waves-arc",
+    "filePath": "animanga/naruto-review-part-1-land-of-waves-arc.mdx",
+    "toc": [
+      {
+        "value": "Naruto Review Part 1",
+        "url": "#naruto-review-part-1-2",
+        "depth": 1
+      },
+      {
+        "value": "Opening Thoughts",
+        "url": "#opening-thoughts-4",
+        "depth": 2
+      },
+      {
+        "value": "How I started Naruto",
+        "url": "#how-i-started-naruto-2",
+        "depth": 3
+      },
+      {
+        "value": "Setting the Scene: Team 7's dynamic",
+        "url": "#setting-the-scene-team-7s-dynamic-3",
+        "depth": 3
+      },
+      {
+        "value": "The other teams",
+        "url": "#the-other-teams-3",
+        "depth": 3
+      },
+      {
+        "value": "The Plot",
+        "url": "#the-plot-2",
+        "depth": 2
+      },
+      {
+        "value": "The first few Arcs",
+        "url": "#the-first-few-arcs-2",
+        "depth": 3
+      },
+      {
+        "value": "Chunin Exam (Greatest Arc in Shonen)",
+        "url": "#chunin-exam-greatest-arc-in-shonen-2",
+        "depth": 3
+      },
+      {
+        "value": "Sasuke Retrieval",
+        "url": "#sasuke-retrieval-2",
+        "depth": 3
+      },
+      {
+        "value": "End of Part 1",
+        "url": "#end-of-part-1-2",
+        "depth": 3
+      },
+      {
+        "value": "My favorite moments",
+        "url": "#my-favorite-moments-2",
+        "depth": 2
+      },
+      {
+        "value": "Neji vs Naruto/Hinata",
+        "url": "#neji-vs-narutohinata-2",
+        "depth": 3
+      },
+      {
+        "value": "Lee vs Gara",
+        "url": "#lee-vs-gara-2",
+        "depth": 3
+      },
+      {
+        "value": "Shikamaru",
+        "url": "#shikamaru-2",
+        "depth": 3
+      },
+      {
+        "value": "Sasuke vs Naruto",
+        "url": "#sasuke-vs-naruto-1",
+        "depth": 3
+      },
+      {
+        "value": "Rating",
+        "url": "#rating-4",
+        "depth": 2
+      }
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Naruto Review Part 1",
+      "datePublished": "2024-10-26T00:00:00.000Z",
+      "dateModified": "2024-10-26T00:00:00.000Z",
+      "description": "An in-depth review of the first Part in the Naruto series...",
+      "image": "/images/twitter-card.webp",
+      "url": "https://blog.maiko26.tn/animanga/naruto-review-part-1-land-of-waves-arc"
+    }
+  }
+]
