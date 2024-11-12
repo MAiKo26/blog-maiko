@@ -4,7 +4,6 @@
 - Top 10 Fights Anime
 - Why Sports Anime is bad
 
-- Arcane Season 1 Review
 - Attack on Titan Full Review
 - HxH Review
 - One Piece Review
