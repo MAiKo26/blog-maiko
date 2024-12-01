@@ -1,7 +1,7 @@
-/** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: "maiko26 Blog",
   author: "Mohamed Aziz Karoui",
+  description: "",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://blog.maiko26.tn",
@@ -16,11 +16,6 @@ const siteMetadata = {
   locale: "en-US",
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
-  analytics: {
-    googleAnalytics: {
-      googleAnalyticsId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
-    },
-  },
 };
 
 module.exports = siteMetadata;

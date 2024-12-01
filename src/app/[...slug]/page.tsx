@@ -2,14 +2,13 @@ import "@/styles/prism.css";
 
 import PostLayout from "@/components/layouts/PostLayout";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
-import siteMetadata from "@/constants/siteMetadata";
-import { getFrontMatterBySlug } from "@/lib/actions";
-import { Metadata } from "next";
-import { FrontMatter } from "@/interfaces/posts-interface";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
 import { MarkdownSkeleton } from "@/components/skeletons/MarkdownSkeleton";
 import PostLayoutSkeleton from "@/components/skeletons/PostLayoutSkeleton";
+import siteMetadata from "@/constants/siteMetadata";
+import { FrontMatter } from "@/interfaces/posts-interface";
+import { getFrontMatterBySlug } from "@/lib/actions";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 async function fetchFrontMatter(slug: string): Promise<FrontMatter | null> {
   const frontMatter = await getFrontMatterBySlug(slug);
@@ -20,11 +19,12 @@ async function fetchFrontMatter(slug: string): Promise<FrontMatter | null> {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string[] };
-}): Promise<Metadata | undefined> {
+  params: Promise<{ slug: string[] }>;
+}) {
   const { slug } = await params;
 
   const FrontMatter = await fetchFrontMatter(slug.join("/"));
+
   if (!FrontMatter) {
     return;
   }
@@ -71,7 +71,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: { slug: string[] } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>;
+}) {
   const { slug } = await params;
   const FrontMatter = await fetchFrontMatter(slug.join("/"));
 

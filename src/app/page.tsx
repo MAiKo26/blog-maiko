@@ -1,21 +1,26 @@
-import { getAllPosts } from "@/lib/actions";
-import Main from "./Main";
-import { Suspense, use } from "react";
 import { BlogPostsSkeleton } from "@/components/skeletons/BlogPostsSkeleton";
+import { FrontMatter } from "@/interfaces/posts-interface";
+import { getAllFrontMatters } from "@/lib/actions";
+import { Suspense } from "react";
+import Main from "./Main";
+
+export const dynamic = "force-dynamic"; // Fully dynamic rendering
 
 export default async function Page() {
-  const postsPromise = getAllPosts(); // Start fetching posts here
+  const postsPromise = getAllFrontMatters();
 
   return (
     <Suspense fallback={<BlogPostsSkeleton />}>
-      {/* Use postsPromise here */}
       <PostsWrapper postsPromise={postsPromise} />
     </Suspense>
   );
 }
 
-// Wrapper component to "suspend" rendering on postsPromise
-async function PostsWrapper({ postsPromise }: { postsPromise: Promise<any> }) {
-  const posts = await postsPromise; // React will suspend rendering until this resolves
+async function PostsWrapper({
+  postsPromise,
+}: {
+  postsPromise: Promise<FrontMatter[]>;
+}) {
+  const posts = await postsPromise;
   return <Main posts={posts} />;
 }

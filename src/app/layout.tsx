@@ -109,8 +109,8 @@ export default function RootLayout({
       />
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
-          {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} /> */}
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
           <SectionContainer>
             <Header />
             <main className="mb-auto">{children}</main>

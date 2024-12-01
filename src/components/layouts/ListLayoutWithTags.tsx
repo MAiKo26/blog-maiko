@@ -7,7 +7,6 @@ import siteMetadata from "@/constants/siteMetadata";
 import { Post } from "@/interfaces/posts-interface";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 import { formatDate } from "@/lib/utils";
-import generalTagData from "@/tags/tag-data.json";
 import { slug } from "github-slugger";
 import { usePathname } from "next/navigation";
 
@@ -20,7 +19,7 @@ interface ListLayoutProps {
   title: string;
   initialDisplayPosts?: Post[];
   pagination?: PaginationProps;
-  tagData?: Record<string, number>;
+  tagData: Record<string, number>;
 }
 
 function Pagination({ totalPages, currentPage }: PaginationProps) {
@@ -78,12 +77,12 @@ export default function ListLayoutWithTags({
   title,
   initialDisplayPosts = [],
   pagination,
-  tagData = generalTagData,
+  tagData,
 }: ListLayoutProps) {
   const pathname = usePathname();
-  const tagCounts = tagData as Record<string, number>;
-  const tagKeys = Object.keys(tagCounts);
-  const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a]);
+
+  const tagKeys = Object.keys(tagData);
+  const sortedTags = tagKeys.sort((a, b) => tagData[b] - tagData[a]);
 
   const displayPosts =
     initialDisplayPosts.length > 0
@@ -113,7 +112,7 @@ export default function ListLayoutWithTags({
                     <li key={t} className="my-3">
                       {decodeURI(pathname.split("/tags/")[1]) === slug(t) ? (
                         <h3 className="inline px-3 py-2 text-sm font-bold uppercase text-primary-500">
-                          {`${t} (${tagCounts[t]})`}
+                          {`${t} (${tagData[t]})`}
                         </h3>
                       ) : (
                         <Link
@@ -121,7 +120,7 @@ export default function ListLayoutWithTags({
                           className="px-3 py-2 text-sm font-medium uppercase text-gray-500 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
                           aria-label={`View posts tagged ${t}`}
                         >
-                          {`${t} (${tagCounts[t]})`}
+                          {`${t} (${tagData[t]})`}
                         </Link>
                       )}
                     </li>

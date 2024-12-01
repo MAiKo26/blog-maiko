@@ -19,7 +19,7 @@ export async function MarkdownRenderer({ slug }: MarkdownRendererProps) {
     <ReactMarkdown
       components={{
         // Optional: Add custom component rendering if needed
-        img: ({ node, ...props }) => (
+        img: ({ ...props }) => (
           <img
             {...props}
             className="mx-auto max-w-full rounded-lg shadow-md"
@@ -27,9 +27,10 @@ export async function MarkdownRenderer({ slug }: MarkdownRendererProps) {
           />
         ),
       }}
-      children={post.content}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
-    />
+    >
+      {post.content}
+    </ReactMarkdown>
   );
 }

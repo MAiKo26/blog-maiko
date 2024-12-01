@@ -7,15 +7,16 @@ import Link from "@/components/Link";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/constants/siteMetadata";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
+import { Post } from "@/interfaces/posts-interface";
 
 interface PaginationProps {
   totalPages: number;
   currentPage: number;
 }
 interface ListLayoutProps {
-  posts: CoreContent<Post>[];
+  posts: Post[];
   title: string;
-  initialDisplayPosts?: CoreContent<Post>[];
+  initialDisplayPosts?: Post[];
   pagination?: PaginationProps;
 }
 
@@ -124,9 +125,9 @@ export default function ListLayout({
         <ul>
           {!filteredBlogPosts.length && "No posts found."}
           {displayPosts.map((post) => {
-            const { path, date, title, summary, tags } = post;
+            const { date, title, summary, tags, slug } = post;
             return (
-              <li key={path} className="py-4">
+              <li key={slug} className="py-4">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
                     <dt className="sr-only">Published on</dt>
@@ -140,7 +141,7 @@ export default function ListLayout({
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
                         <Link
-                          href={`/${path}`}
+                          href={`/${slug}`}
                           className="text-gray-900 dark:text-gray-100"
                         >
                           {title}

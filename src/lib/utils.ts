@@ -1,7 +1,8 @@
-import { Post } from "@/interfaces/posts-interface";
+import { FrontMatter, Post } from "@/interfaces/posts-interface";
 import { clsx, type ClassValue } from "clsx";
 import { slug } from "github-slugger";
 import { twMerge } from "tailwind-merge";
+import { DateFilteringHelper } from "./DateFilteringHelper";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -17,10 +18,14 @@ export function formatDate(date: string | number | Date, locale = "en-US") {
   return now;
 }
 
-export function countingTags(allItems: Post[]): Record<string, number> {
+export function countingTags(
+  allItems: Post[] | FrontMatter[],
+): Record<string, number> {
   const tagCount: Record<string, number> = {};
-  allItems.forEach((file) => {
-    if (file.tags && file.draft !== true && new Date(file.date) > new Date()) {
+  const filteredItems = DateFilteringHelper(allItems);
+
+  filteredItems.forEach((file) => {
+    if (file.tags && file.draft !== true) {
       file.tags.forEach((tag) => {
         const formattedTag = slug(tag);
         if (formattedTag in tagCount) {

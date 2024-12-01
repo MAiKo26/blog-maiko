@@ -3,6 +3,8 @@ import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 import { getAllPosts } from "@/lib/actions";
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-dynamic"; // Fully dynamic rendering
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
 

@@ -1,8 +1,9 @@
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
 import { slug } from "github-slugger";
-import tagData from "@/tags/tag-data.json";
 import { genPageMetadata } from "@/app/seo";
+import { countingTags } from "@/lib/utils";
+import { getAllFrontMatters } from "@/lib/actions";
 
 export const metadata = genPageMetadata({
   title: "Tags",
@@ -10,6 +11,7 @@ export const metadata = genPageMetadata({
 });
 
 export default async function Page() {
+  const tagData = countingTags(await getAllFrontMatters());
   const tagCounts = tagData as Record<string, number>;
   const tagKeys = Object.keys(tagCounts);
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a]);

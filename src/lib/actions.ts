@@ -22,8 +22,6 @@ async function fetchBaseUrls(): Promise<string[]> {
 }
 
 async function fetchFromGitHub(url: string): Promise<GitHubTreeItem[]> {
-  console.log(`Fetching from ${url}`);
-
   const response = await fetch(url, {
     headers: {
       Authorization: `token ${process.env.GITHUB_TOKEN}`,
@@ -51,7 +49,7 @@ async function fetchFrontMatter(fileUrl: string): Promise<FrontMatter | null> {
       )
       .replace(".mdx", "");
 
-    if (!frontmatter) {
+    if (!frontmatter.title || !frontmatter.date) {
       return null;
     }
 
