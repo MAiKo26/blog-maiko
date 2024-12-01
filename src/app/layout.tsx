@@ -1,16 +1,13 @@
-import "@/styles/globals.css";
-import "pliny/search/algolia.css";
-import "remark-github-blockquote-alert/alert.css";
-
-import { Space_Grotesk } from "next/font/google";
-import { Analytics, AnalyticsConfig } from "pliny/analytics/index.js";
-import { SearchProvider, SearchConfig } from "pliny/search/index.js";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SectionContainer from "@/components/SectionContainer";
-import Footer from "@/components/Footer";
-import siteMetadata from "@/content/siteMetadata";
 import { ThemeProviders } from "@/components/theme-providers";
+import siteMetadata from "@/constants/siteMetadata";
+import "@/styles/globals.css";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
+import "remark-github-blockquote-alert/alert.css";
 
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -112,14 +109,11 @@ export default function RootLayout({
       />
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
-          <Analytics
-            analyticsConfig={siteMetadata.analytics as AnalyticsConfig}
-          />
+          {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} /> */}
           <SectionContainer>
-            <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-              <Header />
-              <main className="mb-auto">{children}</main>
-            </SearchProvider>
+            <Header />
+            <main className="mb-auto">{children}</main>
             <Footer />
           </SectionContainer>
         </ThemeProviders>

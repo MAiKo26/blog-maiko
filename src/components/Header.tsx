@@ -1,20 +1,13 @@
+import headerNavLinks from "@/constants/headerNavLinks";
 import { ArrowUpRight } from "lucide-react";
-import headerNavLinks from "@/content/headerNavLinks";
-import siteMetadata from "@/content/siteMetadata";
 import Link from "./Link";
 import MobileNav from "./MobileNav";
 import SearchButton from "./SearchButton";
 import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
-  let headerClass =
-    "flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10";
-  if (siteMetadata.stickyNav) {
-    headerClass += " sticky top-0 z-50";
-  }
-
   return (
-    <header className={headerClass}>
+    <header className="flex w-full items-center justify-between bg-white py-10 dark:bg-gray-950">
       <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
         <div className="no-scrollbar hidden gap-5 sm:flex">
           {headerNavLinks.map((link) => (

@@ -2,16 +2,15 @@
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
 import { Button } from "@/components/ui/button";
-import siteMetadata from "@/content/siteMetadata";
+import siteMetadata from "@/constants/siteMetadata";
+import { Post } from "@/interfaces/posts-interface";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
-import { Post } from "contentlayer/generated";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import { formatDate } from "pliny/utils/formatDate.js";
+import { formatDate } from "@/lib/utils";
 import { useState } from "react";
 
 const MAX_DISPLAY = 20;
 
-export default function Home({ posts }: { posts: CoreContent<Post>[] }) {
+export default function Home({ posts }: { posts: Post[] }) {
   const [maxPosts, setMaxPosts] = useState(MAX_DISPLAY);
   const postsFiltered = DateFilteringHelper(posts);
   return (

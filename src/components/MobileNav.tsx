@@ -8,7 +8,7 @@ import {
 } from "body-scroll-lock";
 import { Fragment, useState, useEffect, useRef } from "react";
 import Link from "./Link";
-import headerNavLinks from "@/content/headerNavLinks";
+import headerNavLinks from "@/constants/headerNavLinks";
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);

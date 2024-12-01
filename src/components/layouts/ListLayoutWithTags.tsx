@@ -3,23 +3,22 @@
 
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/content/siteMetadata";
+import siteMetadata from "@/constants/siteMetadata";
+import { Post } from "@/interfaces/posts-interface";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
+import { formatDate } from "@/lib/utils";
 import generalTagData from "@/tags/tag-data.json";
-import type { Post } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import { usePathname } from "next/navigation";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import { formatDate } from "pliny/utils/formatDate.js";
 
 interface PaginationProps {
   totalPages: number;
   currentPage: number;
 }
 interface ListLayoutProps {
-  posts: CoreContent<Post>[];
+  posts: Post[];
   title: string;
-  initialDisplayPosts?: CoreContent<Post>[];
+  initialDisplayPosts?: Post[];
   pagination?: PaginationProps;
   tagData?: Record<string, number>;
 }
@@ -134,9 +133,9 @@ export default function ListLayoutWithTags({
           <div>
             <ul>
               {displayPosts.map((post) => {
-                const { path, date, title, summary, tags } = post;
+                const { date, title, summary, tags, slug } = post;
                 return (
-                  <li key={path} className="py-5">
+                  <li key={slug} className="py-5">
                     <article className="flex flex-col space-y-2 xl:space-y-0">
                       <dl>
                         <dt className="sr-only">Published on</dt>
@@ -150,7 +149,7 @@ export default function ListLayoutWithTags({
                         <div>
                           <h2 className="text-2xl font-bold leading-8 tracking-tight">
                             <Link
-                              href={`/${path.split("/").slice(1).join("/")}`}
+                              href={`/${slug.split("/").slice(1).join("/")}`}
                               className="text-gray-900 dark:text-gray-100"
                             >
                               {title}

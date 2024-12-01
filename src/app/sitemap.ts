@@ -1,15 +1,17 @@
-import { MetadataRoute } from "next";
-import { allPosts } from "contentlayer/generated";
-import siteMetadata from "@/content/siteMetadata";
+import siteMetadata from "@/constants/siteMetadata";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
+import { getAllPosts } from "@/lib/actions";
+import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts();
+
   const siteUrl = siteMetadata.siteUrl;
 
-  const blogRoutes = DateFilteringHelper(allPosts)
+  const blogRoutes = DateFilteringHelper(posts)
     .filter((post) => !post.draft)
     .map((post) => ({
-      url: `${siteUrl}/${post.path}`,
+      url: `${siteUrl}/${post.slug}`,
       lastModified: post.lastmod || post.date,
     }));
 

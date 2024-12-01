@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import siteMetadata from "@/content/siteMetadata";
+import siteMetadata from "@/constants/siteMetadata";
 
 type PageSEOProps = {
   title: string;

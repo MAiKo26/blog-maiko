@@ -1,19 +1,14 @@
 import type { NextConfig } from "next";
-import { withContentlayer } from "next-contentlayer2";
-
-
 
 const nextConfig: NextConfig = {
-  output: "standalone",
   images: { unoptimized: true },
-
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
 };
 
-export default withContentlayer(nextConfig);
+export default nextConfig;
 
 const ContentSecurityPolicy = `
   default-src 'self';

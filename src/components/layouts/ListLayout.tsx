@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { formatDate } from "pliny/utils/formatDate.js";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import type { Post } from "contentlayer/generated";
+import { formatDate } from "@/lib/utils";
 import Link from "@/components/Link";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/content/siteMetadata";
+import siteMetadata from "@/constants/siteMetadata";
 import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
 
 interface PaginationProps {

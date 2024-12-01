@@ -20,9 +20,6 @@ ENV NODE_ENV=production
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Generate Prisma Client
-RUN npx prisma generate
-
 # Skip static generation during build
 ENV SKIP_BUILD_STATIC_GENERATION=true
 RUN pnpm run build
@@ -50,12 +47,9 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./  
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Add wait-for script to check for database availability
-COPY --from=ghcr.io/ufoscout/docker-compose-wait:latest /wait /wait
-
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
 
 # Modified CMD to wait for database before starting
-CMD /wait && node server.js
+CMD  node server.js

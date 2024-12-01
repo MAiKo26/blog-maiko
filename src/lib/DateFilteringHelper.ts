@@ -1,7 +1,6 @@
-import { Post } from "contentlayer/generated";
-import { CoreContent } from "pliny/utils/contentlayer.js";
+import { FrontMatter, Post } from "@/interfaces/posts-interface";
 
-export function DateFilteringHelper(post: CoreContent<Post>[]) {
+export function DateFilteringHelper(post: Post[] | FrontMatter[]) {
   return post.filter((post) => {
     const { date } = post;
     const BlogDate = new Date(date);

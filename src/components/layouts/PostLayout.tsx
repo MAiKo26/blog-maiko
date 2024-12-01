@@ -3,12 +3,13 @@ import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
 import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import SectionContainer from "@/components/SectionContainer";
-import { PostSeriesBox } from "@/components/SeriesCard";
 import Tag from "@/components/Tag";
-import siteMetadata from "@/content/siteMetadata";
-import type { Authors, Post } from "contentlayer/generated";
-import { CoreContent } from "pliny/utils/contentlayer.js";
-import { ReactNode } from "react";
+import siteMetadata from "@/constants/siteMetadata";
+import { FrontMatter } from "@/interfaces/posts-interface";
+import { author } from "@/lib/author";
+import { ReactNode, Suspense } from "react";
+import SeriesCardWrapper from "../SeriesCardWrapper";
+import { PostSeriesBoxSkeleton } from "../skeletons/PostSeriesBoxSkeleton";
 
 const editUrl = (path: string) =>
   `${siteMetadata.siteRepo}/blob/main/data/${path}`;
@@ -23,22 +24,14 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 };
 
 interface LayoutProps {
-  content: CoreContent<Post>;
-  authorDetails: CoreContent<Authors>[];
-  next?: { path: string; title: string };
-  prev?: { path: string; title: string };
+  FrontMatter: FrontMatter;
   children: ReactNode;
 }
 
-export default function PostLayout({
-  content,
-  authorDetails,
-  next,
-  prev,
+export default async function PostLayout({
+  FrontMatter,
   children,
 }: LayoutProps) {
-  const { filePath, path, date, title, tags, series } = content;
-
   return (
     <SectionContainer>
       <ScrollTopAndComment />
@@ -50,8 +43,8 @@ export default function PostLayout({
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(
+                    <time dateTime={FrontMatter.date}>
+                      {new Date(FrontMatter.date).toLocaleDateString(
                         siteMetadata.locale,
                         postDateTemplate,
                       )}
@@ -60,7 +53,7 @@ export default function PostLayout({
                 </div>
               </dl>
               <div>
-                <PageTitle>{title}</PageTitle>
+                <PageTitle>{FrontMatter.title}</PageTitle>
               </div>
             </div>
           </header>
@@ -69,7 +62,7 @@ export default function PostLayout({
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
-                  {authorDetails.map((author) => (
+                  {
                     <li
                       className="flex items-center space-x-2"
                       key={author.name}
@@ -103,82 +96,47 @@ export default function PostLayout({
                         </dd>
                       </dl>
                     </li>
-                  ))}
+                  }
                 </ul>
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              {series && (
+              {FrontMatter.series && FrontMatter.series.title && (
                 <div className="not-prose mt-4">
-                  <PostSeriesBox currentSerie={series} />
+                  <Suspense
+                    fallback={
+                      <PostSeriesBoxSkeleton
+                        currentSerie={FrontMatter.series}
+                      />
+                    }
+                  >
+                    <SeriesCardWrapper currentSerie={FrontMatter.series} />
+                  </Suspense>
                 </div>
               )}
               <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">
                 {children}
               </div>
               <div className="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(path)} rel="nofollow">
+                <Link href={discussUrl(FrontMatter.slug)} rel="nofollow">
                   Discuss on Twitter
                 </Link>
                 {` • `}
-                <Link href={editUrl(filePath)}>View on GitHub</Link>
+                <Link href={editUrl(FrontMatter.slug)}>View on GitHub</Link>
               </div>
-              {/* {siteMetadata.comments && (
-                <div
-                  className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
-                  id="comment"
-                >
-                  <Comments slug={slug} />
-                </div>
-              )} */}
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                {tags && (
+                {FrontMatter.tags && (
                   <div className="py-4 xl:py-8">
                     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                       Tags
                     </h2>
                     <div className="flex flex-wrap">
-                      {tags.map((tag) => (
+                      {FrontMatter.tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
                     </div>
-                  </div>
-                )}
-
-                {/* <ViewCount url={filePath} /> */}
-
-                {(next || prev) && (
-                  <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                    {prev && prev.path && (
-                      <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Previous Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link
-                            href={`/${prev.path.split("/").slice(1).join("/")}`}
-                          >
-                            {prev.title}
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                    {next && next.path && (
-                      <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Next Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link
-                            href={`/${next.path.split("/").slice(1).join("/")}`}
-                          >
-                            {next.title}
-                          </Link>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>

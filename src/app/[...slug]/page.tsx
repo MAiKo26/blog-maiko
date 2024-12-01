@@ -1,55 +1,45 @@
 import "@/styles/prism.css";
 
-import PostBanner from "@/components/layouts/PostBanner";
 import PostLayout from "@/components/layouts/PostLayout";
-import PostSimple from "@/components/layouts/PostSimple";
-import { components } from "@/components/MDXComponents";
-import siteMetadata from "@/content/siteMetadata";
-import type { Post, Authors } from "contentlayer/generated";
-import { allPosts, allAuthors } from "contentlayer/generated";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import siteMetadata from "@/constants/siteMetadata";
+import { getFrontMatterBySlug } from "@/lib/actions";
 import { Metadata } from "next";
+import { FrontMatter } from "@/interfaces/posts-interface";
 import { notFound } from "next/navigation";
-import { MDXLayoutRenderer } from "pliny/mdx-components.js";
-import {
-  allCoreContent,
-  coreContent,
-  sortPosts,
-} from "pliny/utils/contentlayer.js";
-import { DateFilteringHelper } from "@/lib/DateFilteringHelper";
+import { Suspense } from "react";
+import { MarkdownSkeleton } from "@/components/skeletons/MarkdownSkeleton";
+import PostLayoutSkeleton from "@/components/skeletons/PostLayoutSkeleton";
 
-const defaultLayout = "PostLayout";
-const layouts = {
-  PostSimple,
-  PostLayout,
-  PostBanner,
-};
+async function fetchFrontMatter(slug: string): Promise<FrontMatter | null> {
+  const frontMatter = await getFrontMatterBySlug(slug);
 
-type Params = Promise<{ slug: string[] }>;
+  return frontMatter;
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: { slug: string[] };
 }): Promise<Metadata | undefined> {
   const { slug } = await params;
-  const slugJoined = decodeURI(slug.join("/"));
-  const allPostsDateFiltered = DateFilteringHelper(allPosts);
-  const post = allPostsDateFiltered.find((p) => p.slug === slugJoined);
-  const authorList = post?.authors || ["default"];
-  const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author);
-    return coreContent(authorResults as Authors);
-  });
-  if (!post) {
+
+  const FrontMatter = await fetchFrontMatter(slug.join("/"));
+  if (!FrontMatter) {
     return;
   }
 
-  const publishedAt = new Date(post.date).toISOString();
-  const modifiedAt = new Date(post.lastmod || post.date).toISOString();
-  const authors = authorDetails.map((author) => author.name);
+  const publishedAt = new Date(FrontMatter.date).toISOString();
+  const modifiedAt = new Date(
+    FrontMatter.lastmod || FrontMatter.date,
+  ).toISOString();
+
   let imageList = [siteMetadata.socialBanner];
-  if (post.images) {
-    imageList = typeof post.images === "string" ? [post.images] : post.images;
+  if (FrontMatter.images) {
+    imageList =
+      typeof FrontMatter.images === "string"
+        ? [FrontMatter.images]
+        : FrontMatter.images;
   }
   const ogImages = imageList.map((img) => {
     return {
@@ -58,11 +48,11 @@ export async function generateMetadata({
   });
 
   return {
-    title: post.title,
-    description: post.summary,
+    title: FrontMatter.title,
+    description: FrontMatter.summary,
     openGraph: {
-      title: post.title,
-      description: post.summary,
+      title: FrontMatter.title,
+      description: FrontMatter.summary,
       siteName: siteMetadata.title,
       locale: "en_US",
       type: "article",
@@ -70,75 +60,34 @@ export async function generateMetadata({
       modifiedTime: modifiedAt,
       url: "./",
       images: ogImages,
-      authors: authors.length > 0 ? authors : [siteMetadata.author],
+      authors: siteMetadata.author,
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.summary,
+      title: FrontMatter.title,
+      description: FrontMatter.summary,
       images: imageList,
     },
   };
 }
 
-export const generateStaticParams = async () => {
-  return DateFilteringHelper(allPosts).map((p) => ({
-    slug: p.slug.split("/").map((name) => decodeURI(name)),
-  }));
-};
-
-export default async function Page({ params }: { params: Params }) {
+export default async function Page({ params }: { params: { slug: string[] } }) {
   const { slug } = await params;
-  const slugJoined = decodeURI(slug.join("/"));
-  // Filter out drafts in production
-  const sortedCoreContents = DateFilteringHelper(
-    allCoreContent(sortPosts(allPosts)),
-  );
-  const postIndex = sortedCoreContents.findIndex((p) => p.slug === slugJoined);
-  if (postIndex === -1) {
-    return notFound();
+  const FrontMatter = await fetchFrontMatter(slug.join("/"));
+
+  if (!FrontMatter) {
+    notFound();
   }
 
-  const prev = sortedCoreContents[postIndex + 1];
-  const next = sortedCoreContents[postIndex - 1];
-  const post = DateFilteringHelper(allPosts).find(
-    (p) => p.slug === slugJoined,
-  ) as Post;
-  const authorList = post?.authors || ["default"];
-  const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author);
-    return coreContent(authorResults as Authors);
-  });
-  const mainContent = coreContent(post);
-  const jsonLd = post.structuredData;
-  jsonLd["author"] = authorDetails.map((author) => {
-    return {
-      "@type": "Person",
-      name: author.name,
-    };
-  });
-
-  const Layout =
-    layouts[(post.layout as keyof typeof layouts) || defaultLayout];
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Layout
-        content={mainContent}
-        authorDetails={authorDetails}
-        next={next}
-        prev={prev}
-      >
-        <MDXLayoutRenderer
-          code={post.body.code}
-          components={components}
-          toc={post.toc}
-        />
-      </Layout>
-    </>
+    <Suspense fallback={<PostLayoutSkeleton />}>
+      <PostLayout FrontMatter={FrontMatter}>
+        <article className="prose lg:prose-xl">
+          <Suspense fallback={<MarkdownSkeleton />}>
+            <MarkdownRenderer slug={slug} />
+          </Suspense>
+        </article>
+      </PostLayout>
+    </Suspense>
   );
 }

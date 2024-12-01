@@ -1,5 +1,5 @@
 import Link from "./Link";
-import siteMetadata from "@/content/siteMetadata";
+import siteMetadata from "@/constants/siteMetadata";
 import SocialIcon from "@/components/social-icons";
 
 export default function Footer() {
