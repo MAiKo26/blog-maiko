@@ -1,7 +1,7 @@
-import {fontFamily} from "tailwindcss/defaultTheme";
+import { fontFamily } from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 
-import type {Config} from "tailwindcss";
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -32,7 +32,7 @@ const config: Config = {
         70: "70",
         80: "80",
       },
-      typography: ({theme}: any) => ({
+      typography: ({ theme }: any) => ({
         DEFAULT: {
           css: {
             a: {
@@ -40,7 +40,7 @@ const config: Config = {
               "&:hover": {
                 color: `${theme("colors.primary.600")}`,
               },
-              code: {color: theme("colors.primary.400")},
+              code: { color: theme("colors.primary.400") },
             },
             "h1,h2": {
               fontWeight: "700",
@@ -61,7 +61,7 @@ const config: Config = {
               "&:hover": {
                 color: `${theme("colors.primary.400")}`,
               },
-              code: {color: theme("colors.primary.400")},
+              code: { color: theme("colors.primary.400") },
             },
             "h1,h2,h3,h4,h5,h6": {
               color: theme("colors.gray.100"),
@@ -71,6 +71,10 @@ const config: Config = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("tailwindcss-animate"),
+  ],
 };
 export default config;
