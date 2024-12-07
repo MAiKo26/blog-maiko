@@ -3,9 +3,7 @@ import { Suspense } from "react";
 import BlogSearchDialog from "./BlogSearchDialog";
 import SearchButtonSkeleton from "./skeletons/SearchButtonSkeleton";
 
-interface BlogSearchDialogWrapperProps {}
-
-async function BlogSearchDialogWrapper({}: BlogSearchDialogWrapperProps) {
+async function BlogSearchDialogWrapper() {
   const data = await getAllFrontMatters();
 
   return (
