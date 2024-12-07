@@ -16,11 +16,6 @@ export default function Home({ posts }: { posts: FrontMatter[] }) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
-        </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!postsFiltered.length && "No posts found."}
           {postsFiltered.slice(0, maxPosts).map((post) => {
