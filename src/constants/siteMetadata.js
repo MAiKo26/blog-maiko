@@ -1,9 +1,10 @@
 const siteMetadata = {
   title: "maiko26 Blog",
   author: "Mohamed Aziz Karoui",
-  description: "",
+  description:
+    "Welcome to Maiko26 Blog - A personal space where Mohamed Aziz Karoui shares insights on web development, programming, anime reviews, and more. Dive into tech tutorials, honest opinions, and passionate discussions.",
   language: "en-us",
-  theme: "system", // system, dark or light
+  theme: "system",
   siteUrl: "https://blog.maiko26.tn",
   siteRepo: "https://github.com/maiko26/blog-maiko",
   siteLogo: `${process.env.BASE_PATH || ""}/images/logo.png`,
@@ -14,7 +15,6 @@ const siteMetadata = {
   youtube: "https://youtube.com/@maiko26-dev",
   linkedin: "https://www.linkedin.com/in/mohamed-aziz-karoui",
   locale: "en-US",
-  // set to true if you want a navbar fixed to the top
   stickyNav: false,
 };
 
