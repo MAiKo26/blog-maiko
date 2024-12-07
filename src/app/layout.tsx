@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
     types: {
-      "application/rss+xml": `${siteMetadata.siteUrl}/feed.xml`,
+      "application/rss+xml": `${siteMetadata.siteUrl}/rss.xml`,
     },
   },
   robots: {
@@ -60,8 +60,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const basePath = process.env.BASE_PATH || "";
-
   return (
     <html
       lang={siteMetadata.language}
@@ -71,24 +69,27 @@ export default function RootLayout({
       <link
         rel="apple-touch-icon"
         sizes="76x76"
-        href={`${basePath}/favicons/apple-touch-icon.png`}
+        href={`${siteMetadata.siteUrl}/favicons/apple-touch-icon.png`}
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href={`${basePath}/favicons/favicon-32x32.png`}
+        href={`${siteMetadata.siteUrl}/favicons/favicon-32x32.png`}
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href={`${basePath}/favicons/favicon-16x16.png`}
+        href={`${siteMetadata.siteUrl}/favicons/favicon-16x16.png`}
       />
-      <link rel="manifest" href={`${basePath}/favicons/site.webmanifest`} />
+      <link
+        rel="manifest"
+        href={`${siteMetadata.siteUrl}/favicons/site.webmanifest`}
+      />
       <link
         rel="mask-icon"
-        href={`${basePath}/favicons/safari-pinned-tab.svg`}
+        href={`${siteMetadata.siteUrl}/favicons/safari-pinned-tab.svg`}
         color="#5bbad5"
       />
       <meta name="msapplication-TileColor" content="#000000" />
@@ -101,11 +102,6 @@ export default function RootLayout({
         name="theme-color"
         media="(prefers-color-scheme: dark)"
         content="#000"
-      />
-      <link
-        rel="alternate"
-        type="application/rss+xml"
-        href={`${basePath}/feed.xml`}
       />
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
