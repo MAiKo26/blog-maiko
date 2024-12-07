@@ -1,8 +1,8 @@
 import headerNavLinks from "@/constants/headerNavLinks";
 import { ArrowUpRight } from "lucide-react";
+import BlogSearchDialogWrapper from "./BlogSearchDialogWrapper";
 import Link from "./Link";
 import MobileNav from "./MobileNav";
-import SearchButton from "./SearchButton";
 import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
@@ -25,7 +25,7 @@ const Header = () => {
         </div>
       </div>
       <div className="no-scrollbar flex gap-5">
-        <SearchButton />
+        <BlogSearchDialogWrapper />
         <ThemeSwitch />
         <MobileNav />
       </div>
