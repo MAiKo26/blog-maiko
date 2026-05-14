@@ -1,25 +1,112 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "var(--font-space-grotesk)", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --line-height-11: 2.75rem;
+  --line-height-12: 3rem;
+  --line-height-13: 3.25rem;
+  --line-height-14: 3.5rem;
+
+  --z-index-60: 60;
+  --z-index-70: 70;
+  --z-index-80: 80;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  .prose {
+    --tw-prose-links: var(--color-primary-500);
+    --tw-prose-code: var(--color-indigo-500);
+  }
+
+  .prose a {
+    color: var(--tw-prose-links);
+  }
+
+  .prose a:hover {
+    color: var(--color-primary-600);
+  }
+
+  .prose a code {
+    color: var(--color-primary-400);
+  }
+
+  .prose h1,
+  .prose h2 {
+    font-weight: 700;
+    letter-spacing: var(--font-tracking-tight);
+  }
+
+  .prose h3 {
+    font-weight: 600;
+  }
+
+  .prose-invert {
+    --tw-prose-links: var(--color-primary-500);
+    --tw-prose-code: var(--color-primary-400);
+  }
+
+  .prose-invert a:hover {
+    color: var(--color-primary-400);
+  }
+
+  .prose-invert h1,
+  .prose-invert h2,
+  .prose-invert h3,
+  .prose-invert h4,
+  .prose-invert h5,
+  .prose-invert h6 {
+    color: var(--color-gray-100);
+  }
+}
 
 .task-list-item::before {
-  @apply hidden;
+  display: none;
 }
 
 .task-list-item {
-  @apply list-none;
+  list-style: none;
 }
 
 .footnotes {
-  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: 2rem;
+}
+
+.dark .footnotes {
+  border-top-color: var(--color-gray-700);
 }
 
 .data-footnote-backref {
-  @apply no-underline;
+  text-decoration: none;
 }
 
 .csl-entry {
-  @apply my-5;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -27,11 +114,10 @@
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition:
@@ -57,10 +143,4 @@ input:-webkit-autofill:focus {
 .linkicon {
   display: inline-block;
   vertical-align: middle;
-}
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
 }
