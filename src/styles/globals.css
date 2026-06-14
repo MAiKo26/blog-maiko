@@ -64,6 +64,7 @@
   }
 
   .prose-invert {
+    --tw-prose-body: var(--color-gray-100);
     --tw-prose-links: var(--color-primary-500);
     --tw-prose-code: var(--color-primary-400);
   }
