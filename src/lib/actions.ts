@@ -77,7 +77,7 @@ async function fetchPostContent(slug: string): Promise<Post | null> {
 
     const response = await fetch(fileUrl);
     const fileData = (await response.text()).replaceAll(
-      "../../assets",
+      /(\.\.\/)+assets/g,
       "https://raw.githubusercontent.com/MAiKo26/blog-maiko-content/main/assets",
     );
 
