@@ -86,7 +86,7 @@ export default async function Page({
   return (
     <Suspense fallback={<PostLayoutSkeleton />}>
       <PostLayout FrontMatter={FrontMatter}>
-        <article className="prose lg:prose-xl dark:prose-invert">
+        <article className="prose lg:prose-lg xl:prose-xl dark:prose-invert w-full max-w-none">
           <Suspense fallback={<MarkdownSkeleton />}>
             <MarkdownRenderer slug={slug} />
           </Suspense>
