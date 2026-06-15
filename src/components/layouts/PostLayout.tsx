@@ -12,9 +12,9 @@ import SeriesCardWrapper from "../SeriesCardWrapper";
 import { PostSeriesBoxSkeleton } from "../skeletons/PostSeriesBoxSkeleton";
 
 const editUrl = (path: string) =>
-  `${siteMetadata.siteRepo}/blob/main/data/${path}`;
+  `${siteMetadata.siteRepoContent}/blob/main/data/${path}`;
 const discussUrl = (path: string) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`;
+  `https://x.com/intent/tweet?url=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`;
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: "long",
@@ -117,7 +117,7 @@ export default async function PostLayout({
               <div className="pt-10 pb-8">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(FrontMatter.slug)} rel="nofollow">
-                  Discuss on Twitter
+                  Discuss on X
                 </Link>
                 {` • `}
                 <Link href={editUrl(FrontMatter.slug)}>View on GitHub</Link>

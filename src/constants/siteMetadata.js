@@ -7,6 +7,7 @@ const siteMetadata = {
   theme: "system",
   siteUrl: "https://blog.maiko26.tn",
   siteRepo: "https://github.com/maiko26/blog-maiko",
+  siteRepoContent: "https://github.com/maiko26/blog-maiko-content",
   siteLogo: `${process.env.BASE_PATH || ""}/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ""}/images/twitter-card.webp`,
   email: "contact.mohamedazizkaroui@gmail.com",
