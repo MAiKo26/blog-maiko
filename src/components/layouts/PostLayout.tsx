@@ -12,7 +12,7 @@ import SeriesCardWrapper from "../SeriesCardWrapper";
 import { PostSeriesBoxSkeleton } from "../skeletons/PostSeriesBoxSkeleton";
 
 const editUrl = (path: string) =>
-  `${siteMetadata.siteRepoContent}/blob/main/data/${path}`;
+  `${siteMetadata.siteRepoContent}/blob/main/posts/${path}.mdx`;
 const discussUrl = (path: string) =>
   `https://x.com/intent/tweet?url=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`;
 
